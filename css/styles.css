@@ -1,0 +1,454 @@
+/* ==========================================================================
+   ELICER — Estilos de Lujo Editorial & Dirección de Arte
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-ivory: #F4F0E8;
+  --color-warm-white: #FAF8F4;
+  --color-charcoal: #1C1B19;
+  --color-espresso: #352820;
+  --color-leather: #8A6347;
+  --color-sand: #D8C8B5;
+  --color-sand-light: #ECE5DC;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Safe Area Insets para dispositivos móviles con notch / barra inferior (Apple HIG & Material) */
+  --sat: env(safe-area-inset-top, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+}
+
+/* Reset y base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Tipografía de marca */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Scrollbar editorial sutil */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sand);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-leather);
+}
+
+/* Colores de utilidad personalizados */
+.bg-ivory { background-color: var(--color-ivory); }
+.bg-warm-white { background-color: var(--color-warm-white); }
+.bg-charcoal { background-color: var(--color-charcoal); }
+.bg-espresso { background-color: var(--color-espresso); }
+.bg-leather { background-color: var(--color-leather); }
+.bg-sand { background-color: var(--color-sand); }
+.bg-sand-light { background-color: var(--color-sand-light); }
+
+.text-ivory { color: var(--color-ivory); }
+.text-warm-white { color: var(--color-warm-white); }
+.text-charcoal { color: var(--color-charcoal); }
+.text-espresso { color: var(--color-espresso); }
+.text-leather { color: var(--color-leather); }
+.text-sand { color: var(--color-sand); }
+
+.border-sand { border-color: var(--color-sand); }
+.border-sand-light { border-color: var(--color-sand-light); }
+.border-charcoal { border-color: var(--color-charcoal); }
+.border-leather { border-color: var(--color-leather); }
+
+/* Animaciones y Microinteracciones */
+.transition-luxury {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -12px rgba(28, 27, 25, 0.1);
+}
+
+/* Navbar dinámico */
+.navbar-scrolled {
+  background-color: rgba(244, 240, 232, 0.95) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(216, 200, 181, 0.5);
+  box-shadow: 0 4px 20px -2px rgba(28, 27, 25, 0.05);
+}
+
+/* Efectos visuales para el monograma personalizado */
+.monogram-blind {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), -1px -1px 1px rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.3em;
+}
+
+.monogram-gold {
+  color: #D4AF37;
+  text-shadow: 0 0 1px rgba(0,0,0,0.5), 1px 1px 3px rgba(0,0,0,0.8);
+  background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.3em;
+}
+
+.monogram-silver {
+  color: #E0E0E0;
+  text-shadow: 0 0 1px rgba(0,0,0,0.5), 1px 1px 3px rgba(0,0,0,0.8);
+  background: linear-gradient(135deg, #FFFFFF 0%, #D8D8D8 50%, #9E9E9E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.3em;
+}
+
+/* Imagen de Hero con Overlay Editorial */
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(28, 27, 25, 0.45) 0%,
+    rgba(28, 27, 25, 0.3) 50%,
+    rgba(28, 27, 25, 0.78) 100%
+  );
+}
+
+/* Tarjetas de Producto */
+.product-card {
+  position: relative;
+  background-color: var(--color-warm-white);
+  border: 1px solid rgba(216, 200, 181, 0.5);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+  border-color: var(--color-leather);
+  box-shadow: 0 16px 36px -12px rgba(53, 40, 32, 0.12);
+  transform: translateY(-3px);
+}
+
+.product-card-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-card-img {
+  transform: scale(1.05);
+}
+
+/* Botones llamativos y refinados de WhatsApp */
+.btn-whatsapp-primary {
+  background: linear-gradient(135deg, #1C1B19 0%, #2A2723 100%);
+  color: #FAF8F4;
+  border: 1px solid rgba(216, 200, 181, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-whatsapp-primary:hover {
+  background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+  border-color: #25D366;
+  box-shadow: 0 8px 25px -4px rgba(37, 211, 102, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1C1B19;
+  color: #FAF8F4;
+  padding: 0.6rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-whatsapp-card:hover {
+  background-color: #25D366;
+  color: #1C1B19;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-whatsapp-card:hover svg {
+  color: #1C1B19;
+  transform: scale(1.1);
+}
+
+/* Modal de Detalle */
+.modal-backdrop {
+  background-color: rgba(28, 27, 25, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Botón flotante SOLO ICONO de WhatsApp */
+.floating-whatsapp-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4), 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-whatsapp-circle:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.55), 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.floating-whatsapp-circle::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Tooltip elegante del icono flotante */
+.floating-tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid rgba(216, 200, 181, 0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-whatsapp-circle:hover .floating-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+/* Skip Link accesible para teclado */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background-color: var(--color-charcoal);
+  color: var(--color-warm-white);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--color-sand);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: top 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--color-leather);
+  outline-offset: 3px;
+}
+
+/* Indicador de foco visible de alto contraste para navegación por teclado (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 2px solid var(--color-leather) !important;
+  outline-offset: 3px !important;
+}
+
+button:focus-visible, 
+a:focus-visible, 
+input:focus-visible {
+  outline: 2px solid var(--color-leather) !important;
+  outline-offset: 2px !important;
+}
+
+/* Ajuste de contraste para textos secundarios */
+.text-contrast-body {
+  color: rgba(28, 27, 25, 0.85);
+}
+
+.text-contrast-muted {
+  color: rgba(28, 27, 25, 0.72);
+}
+
+/* Spinner accesible de estado de carga */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Respeto estricto a las preferencias de reducción de movimiento (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .hover-lift:hover,
+  .product-card:hover,
+  .product-card-img,
+  .floating-whatsapp-circle:hover {
+    transform: none !important;
+  }
+
+  .floating-whatsapp-circle::before {
+    animation: none !important;
+  }
+}
+
+.hero-fluid-title {
+  font-size: clamp(2.25rem, 5.5vw + 1rem, 5.5rem);
+  line-height: 1.05;
+}
+
+.section-fluid-title {
+  font-size: clamp(1.85rem, 3.5vw + 0.5rem, 3.25rem);
+  line-height: 1.15;
+}
+
+/* Safe Area Insets Utilities */
+.safe-top-padding {
+  padding-top: max(1rem, var(--sat));
+}
+
+.safe-bottom-padding {
+  padding-bottom: max(1rem, var(--sab));
+}
+
+.floating-whatsapp-container {
+  position: fixed;
+  bottom: calc(1.5rem + var(--sab));
+  right: calc(1.5rem + var(--sar));
+  z-index: 40;
+}
+
+@media (max-width: 380px) {
+  .floating-whatsapp-container {
+    bottom: calc(1rem + var(--sab));
+    right: calc(1rem + var(--sar));
+  }
+  .floating-whatsapp-circle {
+    width: 50px;
+    height: 50px;
+  }
+  .floating-whatsapp-circle svg {
+    width: 26px;
+    height: 26px;
+  }
+  /* Ocultar tooltip en pantallas muy estrechas para evitar desborde lateral */
+  .floating-tooltip {
+    display: none;
+  }
+}
+
+/* Prevención de Auto-Zoom en iOS Safari al enfocar campos de texto */
+@media screen and (max-width: 767px) {
+  input[type="text"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Scrollbar invisible para contenedores deslizables táctiles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Optimización de Modal en Orientación Horizontal (Mobile Landscape) */
+@media (max-height: 520px) and (orientation: landscape) {
+  #product-detail-modal {
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+  #product-detail-modal > div {
+    max-height: 94dvh;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Garantía de Touch Targets Mínimos (44x44px Apple HIG / WCAG 2.2 Nivel AA) */
+.touch-target-min {
+  min-height: 44px;
+  min-width: 44px;
+}
+

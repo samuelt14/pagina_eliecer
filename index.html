@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>ELICER — Marroquinería Contemporánea & 5 Líneas de Oficio | Colombia • Canadá</title>
+  <meta name="description" content="ELICER presenta sus 5 líneas oficiales en cuero genuino: Sport, Deportiva, Marroquinería, Institucional y Premium. Personalización a medida y cotización directa por WhatsApp." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#F4F0E8',
+            'warm-white': '#FAF8F4',
+            charcoal: '#1C1B19',
+            espresso: '#352820',
+            leather: '#8A6347',
+            sand: '#D8C8B5',
+            'sand-light': '#ECE5DC',
+            whatsapp: '#25D366',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Manrope"', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Security & Privacy Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://images.unsplash.com https://*.unsplash.com; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+
+  <!-- Estilos Custom -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-ivory text-charcoal font-sans antialiased selection:bg-sand selection:text-charcoal">
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-40 text-ivory transition-luxury py-3 sm:py-4 px-4 sm:px-6 md:px-12 safe-top-padding">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Oficial / Marca -->
+      <a href="#hero" class="flex items-center gap-2.5 sm:gap-3.5 group" aria-label="ELICER — Inicio">
+        <div class="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full overflow-hidden border border-[#D4AF37]/70 shadow-md bg-warm-white p-0.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
+          <img 
+            id="nav-logo-img"
+            src="fotos/Logos/emblema_circle.jpg" 
+            alt="ELICER Emblema" 
+            class="w-full h-full object-cover rounded-full transition-all duration-300"
+          />
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span id="nav-logo" class="font-serif text-xl sm:text-2xl md:text-3xl tracking-[0.2em] sm:tracking-[0.25em] font-medium text-ivory transition-colors leading-none">
+            ELICER
+          </span>
+          <span id="nav-subtitle" class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] font-mono text-sand/90 mt-1 transition-colors truncate max-w-[140px] sm:max-w-none">
+            Jorge Eliecer Gómez
+          </span>
+        </div>
+      </a>
+
+      <!-- Menú Central (Desktop) -->
+      <nav aria-label="Navegación principal desktop" class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium">
+        <a href="#vitrina" class="nav-link-item hover:text-leather transition-colors py-1">Vitrina</a>
+        <a href="#personalizacion" class="nav-link-item hover:text-leather transition-colors py-1">Personalización</a>
+        <a href="#mayoristas" class="nav-link-item hover:text-leather transition-colors py-1">Mayoristas</a>
+        <a href="#historia" class="nav-link-item hover:text-leather transition-colors py-1">Historia</a>
+      </nav>
+
+      <!-- Botón Móvil Accesible -->
+      <button 
+        id="mobile-menu-btn" 
+        type="button" 
+        class="md:hidden p-2 text-current focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" 
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="mobile-menu-drawer"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Overlay Backdrop para Menú Móvil -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-charcoal/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300" aria-hidden="true"></div>
+
+  <!-- Menú Drawer Móvil Accesible -->
+  <aside 
+    id="mobile-menu-drawer" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-label="Menú de navegación móvil"
+    class="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-warm-white z-50 transform translate-x-full transition-transform duration-500 ease-in-out shadow-2xl p-6 sm:p-8 flex flex-col justify-between border-l border-sand safe-top-padding safe-bottom-padding"
+  >
+    <div>
+      <div class="flex items-center justify-between border-b border-sand/40 pb-5 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full overflow-hidden border border-[#D4AF37]/70 shadow-sm bg-warm-white p-0.5 flex items-center justify-center flex-shrink-0">
+            <img src="fotos/Logos/emblema_circle.jpg" alt="ELICER Emblema" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <div class="min-w-0">
+            <span class="font-serif text-2xl tracking-[0.25em] font-semibold text-charcoal block leading-none">ELICER</span>
+            <span class="text-[9px] uppercase tracking-[0.25em] font-mono text-charcoal/60 mt-0.5 block truncate">Jorge Eliecer Gómez</span>
+          </div>
+        </div>
+        <button 
+          id="close-mobile-menu" 
+          type="button" 
+          class="p-2 text-charcoal hover:text-leather min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" 
+          aria-label="Cerrar menú de navegación"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav aria-label="Navegación móvil" class="flex flex-col space-y-5 text-sm uppercase tracking-[0.2em] font-medium">
+        <a href="#vitrina" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Vitrina Virtual</a>
+        <a href="#personalizacion" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Personalización</a>
+        <a href="#mayoristas" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Mayoristas</a>
+        <a href="#historia" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Nuestra Historia</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-sand/40">
+      <a 
+        href="https://wa.me/573000000000?text=Hola%20ELICER,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full bg-[#128C7E] hover:bg-[#075E54] text-white py-3.5 px-4 text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2 font-semibold shadow-md transition-colors min-h-[44px]"
+      >
+        <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.838-.76-3.023-2.624-3.114-2.748-.093-.125-.744-.991-.744-1.891 0-.899.47-1.343.637-1.528.167-.184.366-.231.488-.231.122 0 .245.001.352.007.113.006.264-.043.413.315.155.372.528 1.289.574 1.382.046.094.077.203.016.327-.061.124-.092.202-.183.311-.093.109-.196.244-.279.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.139.715 1.503.798 1.717.904.214.106.34.093.468-.053.128-.146.551-.64.698-.86.147-.22.294-.184.496-.109.202.075 1.282.605 1.502.715.22.11.368.164.422.257.054.094.054.544-.09 1.002z"/>
+        </svg>
+        <span>Cotizar por WhatsApp</span>
+      </a>
+      <p class="text-center text-[11px] text-charcoal/70 mt-3 font-mono">Taller Bogotá • Estudio Montréal</p>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       CONTENIDO PRINCIPAL
+       ========================================================================= -->
+  <main id="main-content">
+
+  <!-- =========================================================================
+       2. HERO EDITORIAL DE ALTO IMPACTO
+       ========================================================================= -->
+  <section id="hero" class="relative min-h-[100dvh] flex items-center justify-center bg-charcoal overflow-hidden pt-24 pb-16 px-4 sm:px-6 md:px-12">
+    
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="fotos/Premium/Gemini_Generated_Image_azsaxvazsaxvazsa.jpg" 
+        alt="ELICER Cuero Contemporáneo" 
+        class="w-full h-full object-cover object-center filter brightness-75 scale-105 transition-transform duration-1000 ease-out"
+      />
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center text-ivory space-y-6 sm:space-y-8">
+      
+      <div class="inline-flex items-center gap-2 sm:gap-3 border border-[#D4AF37]/50 bg-charcoal/70 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg max-w-full">
+        <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-[#D4AF37]/80 flex-shrink-0">
+          <img src="fotos/Logos/emblema_circle.jpg" alt="ELICER Emblema" class="w-full h-full object-cover" />
+        </div>
+        <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-mono text-sand truncate">Hecho en Colombia • Presente en América</span>
+      </div>
+
+      <h1 class="hero-fluid-title font-serif tracking-tight font-light">
+        Diseñado para <br class="hidden sm:inline" />
+        <span class="italic font-normal">ser único.</span>
+      </h1>
+
+      <p class="font-sans text-sm sm:text-base md:text-lg text-ivory/90 max-w-2xl mx-auto font-light leading-relaxed">
+        Cinco líneas oficiales creadas en cuero genuino con oficio artesanal. Consulta disponibilidad y cotiza directamente con nuestro taller a través de WhatsApp.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-6 w-full max-w-xs sm:max-w-none mx-auto">
+        <a 
+          href="#vitrina" 
+          class="w-full sm:w-auto bg-warm-white text-charcoal hover:bg-ivory py-3.5 sm:py-4 px-6 sm:px-8 text-xs uppercase tracking-[0.2em] font-semibold transition-luxury flex items-center justify-center gap-3 shadow-lg min-h-[44px]"
+        >
+          <span>Explorar Vitrina</span>
+          <span class="text-leather" aria-hidden="true">→</span>
+        </a>
+
+        <a 
+          href="#personalizacion" 
+          class="w-full sm:w-auto border border-sand/80 bg-charcoal/30 backdrop-blur-sm text-ivory hover:bg-sand/20 hover:border-ivory py-3.5 sm:py-4 px-6 sm:px-8 text-xs uppercase tracking-[0.2em] font-medium transition-luxury min-h-[44px] flex items-center justify-center"
+        >
+          Personaliza tu Pieza
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Indicador de Scroll -->
+    <div class="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10 text-ivory/60 text-[10px] tracking-[0.3em] uppercase flex flex-col items-center gap-2 pointer-events-none">
+      <span>Deslizar</span>
+      <span class="w-[1px] h-6 sm:h-8 bg-sand/50 animate-pulse"></span>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       4. VITRINA VIRTUAL / CATÁLOGO PARA COTIZACIÓN
+       ========================================================================= -->
+  <section id="vitrina" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-warm-white">
+    <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+      
+      <!-- Cabecera de Sección -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-sand/40 pb-8">
+        <div class="space-y-3">
+          <span class="text-xs uppercase tracking-[0.3em] font-mono text-leather">Vitrina Virtual</span>
+          <h2 class="section-fluid-title font-serif font-light text-charcoal">
+            Catálogo de Piezas & Cotización
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-charcoal/70 max-w-md font-light leading-relaxed">
+          Cada pieza se confecciona a mano bajo pedido. Selecciona la silueta de tu interés para solicitar cotización y tiempos de manufactura directamente por WhatsApp.
+        </p>
+      </div>
+
+      <!-- Filtros por las 5 Líneas Oficiales (Tablist Deslizable en Móvil / Adaptativo) -->
+      <div role="tablist" aria-label="Filtrar catálogo por líneas de producto" class="flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs uppercase tracking-[0.15em] overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+        <button 
+          type="button" 
+          role="tab"
+          id="tab-line-all"
+          aria-selected="true"
+          aria-controls="products-grid-container"
+          data-line="all" 
+          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-charcoal bg-charcoal text-ivory font-medium transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
+        >
+          Todas las Líneas
+        </button>
+        <button 
+          type="button" 
+          role="tab"
+          id="tab-line-sport"
+          aria-selected="false"
+          aria-controls="products-grid-container"
+          data-line="sport" 
+          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
+        >
+          Sport
+        </button>
+        <button 
+          type="button" 
+          role="tab"
+          id="tab-line-deportiva"
+          aria-selected="false"
+          aria-controls="products-grid-container"
+          data-line="deportiva" 
+          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
+        >
+          Deportiva
+        </button>
+        <button 
+          type="button" 
+          role="tab"
+          id="tab-line-marroquineria"
+          aria-selected="false"
+          aria-controls="products-grid-container"
+          data-line="marroquineria" 
+          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
+        >
+          Marroquinería
+        </button>
+        <button 
+          type="button" 
+          role="tab"
+          id="tab-line-institucional"
+          aria-selected="false"
+          aria-controls="products-grid-container"
+          data-line="institucional" 
+          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
+        >
+          Institucional
+        </button>
+        <button 
+          type="button" 
+          role="tab"
+          id="tab-line-premium"
+          aria-selected="false"
+          aria-controls="products-grid-container"
+          data-line="premium" 
+          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
+        >
+          Premium
+        </button>
+      </div>
+
+      <!-- Banner Informativo Dinámico de la Línea Seleccionada -->
+      <div id="vitrina-line-banner" class="transition-all duration-300 min-w-0" aria-live="polite"></div>
+
+      <!-- Cuadrícula Dinámica de Productos -->
+      <div id="products-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8" aria-live="polite" aria-atomic="false">
+        <!-- Renderizado dinámicamente vía app.js -->
+      </div>
+
+      <!-- Banner de Asesoría Directa -->
+      <div class="p-6 sm:p-8 md:p-10 bg-ivory border border-sand/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
+        <div>
+          <h3 class="font-serif text-2xl md:text-3xl text-charcoal">¿Deseas una modificación especial sobre un modelo?</h3>
+          <p class="text-xs md:text-sm text-charcoal/70 mt-1.5 font-light">Podemos adaptar medidas, colores de cuero y herrajes a tu gusto exacto.</p>
+        </div>
+        <a 
+          href="https://wa.me/573000000000?text=Hola%20ELICER,%20me%20gustar%C3%ADa%20consultar%20sobre%20la%20adaptaci%C3%B3n%20a%20medida%20de%20una%20pieza." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-whatsapp-primary px-7 py-4 text-xs uppercase tracking-[0.2em] font-semibold whitespace-nowrap inline-flex items-center justify-center gap-2.5 cursor-pointer shadow-md w-full sm:w-auto min-h-[44px]"
+        >
+          <svg class="w-4 h-4 text-emerald-400 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.838-.76-3.023-2.624-3.114-2.748-.093-.125-.744-.991-.744-1.891 0-.899.47-1.343.637-1.528.167-.184.366-.231.488-.231.122 0 .245.001.352.007.113.006.264-.043.413.315.155.372.528 1.289.574 1.382.046.094.077.203.016.327-.061.124-.092.202-.183.311-.093.109-.196.244-.279.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.139.715 1.503.798 1.717.904.214.106.34.093.468-.053.128-.146.551-.64.698-.86.147-.22.294-.184.496-.109.202.075 1.282.605 1.502.715.22.11.368.164.422.257.054.094.054.544-.09 1.002z"/>
+          </svg>
+          <span>Consultar al Taller</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       5. PERSONALIZACIÓN "HAZLO TUYO" — Sección Informativa
+       ========================================================================= -->
+  <section id="personalizacion" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-ivory border-t border-b border-sand/40">
+    <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+
+      <!-- Cabecera -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+        <span class="text-xs uppercase tracking-[0.3em] font-mono text-leather block">Pilar Fundamental</span>
+        <h2 class="section-fluid-title font-serif font-light text-charcoal">
+          Hazlo Tuyo
+        </h2>
+        <p class="text-xs sm:text-base text-charcoal/80 font-light leading-relaxed">
+          Cada pieza ELICER puede diseñarse a tu medida exacta. Elige materiales, colores, herrajes y grabado — luego cotiza directamente con nuestro taller por WhatsApp.
+        </p>
+      </div>
+
+      <!-- Grid Informativo de Opciones de Personalización -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+        <!-- 1. Cuero & Color -->
+        <div class="bg-warm-white border border-sand/60 p-5 sm:p-7 space-y-3 sm:space-y-4 hover-lift">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/30 text-leather font-serif text-lg font-semibold">
+            01
+          </div>
+          <h3 class="font-serif text-xl text-charcoal font-medium">Cuero & Color</h3>
+          <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+            Selecciona entre cuero curtido vegetal, graso, plena flor o hidrófugo. Tonos disponibles: Negro Ébano, Espresso, Cognac, Miel, Tobacco, Borgoña y más.
+          </p>
+          <ul class="text-[11px] text-charcoal/60 space-y-1 font-mono">
+            <li>• Curtición vegetal libre de cromo</li>
+            <li>• Cuero hidrófugo para línea sport</li>
+            <li>• Cuero macizo de montura 4 mm</li>
+          </ul>
+        </div>
+
+        <!-- 2. Herrajes & Acabados -->
+        <div class="bg-warm-white border border-sand/60 p-5 sm:p-7 space-y-3 sm:space-y-4 hover-lift">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/30 text-leather font-serif text-lg font-semibold">
+            02
+          </div>
+          <h3 class="font-serif text-xl text-charcoal font-medium">Herrajes & Acabados</h3>
+          <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+            Todos los herrajes son en metal macizo, sin piezas plásticas. Elige el acabado que mejor exprese tu estilo.
+          </p>
+          <ul class="text-[11px] text-charcoal/60 space-y-1 font-mono">
+            <li>• Latón dorado pulido</li>
+            <li>• Latón cepillado satinado</li>
+            <li>• Acero inoxidable cromado</li>
+            <li>• Bronce envejecido antiguo</li>
+          </ul>
+        </div>
+
+        <!-- 3. Grabado & Monograma -->
+        <div class="bg-warm-white border border-sand/60 p-5 sm:p-7 space-y-3 sm:space-y-4 hover-lift">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/30 text-leather font-serif text-lg font-semibold">
+            03
+          </div>
+          <h3 class="font-serif text-xl text-charcoal font-medium">Grabado & Monograma</h3>
+          <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+            Personaliza con tus iniciales, nombre completo o logotipo corporativo. Técnicas artesanales de precisión sobre el cuero.
+          </p>
+          <ul class="text-[11px] text-charcoal/60 space-y-1 font-mono">
+            <li>• Bajo relieve térmico (debossed)</li>
+            <li>• Foil dorado o plateado</li>
+            <li>• Cuño metálico corporativo</li>
+          </ul>
+        </div>
+
+        <!-- 4. Medidas & Forro -->
+        <div class="bg-warm-white border border-sand/60 p-5 sm:p-7 space-y-3 sm:space-y-4 hover-lift">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/30 text-leather font-serif text-lg font-semibold">
+            04
+          </div>
+          <h3 class="font-serif text-xl text-charcoal font-medium">Medidas & Forro</h3>
+          <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+            Dimensiones adaptadas a tu uso exacto: tablet, laptop de 13" a 16", documentos carta o A4. Forro según la línea.
+          </p>
+          <ul class="text-[11px] text-charcoal/60 space-y-1 font-mono">
+            <li>• Gamuza natural suave</li>
+            <li>• Cordura impermeable sport</li>
+            <li>• Lona resinada lavable</li>
+            <li>• Algodón satinado color Sand</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CTA Central de WhatsApp -->
+      <div class="bg-warm-white border border-[#D4AF37]/50 p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
+        <div class="space-y-2">
+          <span class="text-xs uppercase tracking-[0.25em] font-mono text-leather block">¿Listo para diseñar tu pieza?</span>
+          <h3 class="font-serif text-2xl md:text-3xl text-charcoal font-light">
+            Cuéntanos tu idea — la hacemos realidad.
+          </h3>
+          <p class="text-xs text-charcoal/70 font-light max-w-2xl">
+            Escríbenos por WhatsApp con tu concepto: tipo de pieza, colores preferidos, uso y cualquier detalle especial. Nuestros maestros artesanos te responden con opciones y tiempos de manufactura.
+          </p>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto">
+          <a
+            href="https://wa.me/573000000000?text=Hola%20ELICER,%20quiero%20cotizar%20una%20*pieza%20personalizada*%20con%20las%20siguientes%20especificaciones:%0A%0A*Tipo%20de%20pieza:*%20%0A*Color%20de%20cuero:*%20%0A*Herrajes:*%20%0A*Grabado%20%2F%20Monograma:*%20%0A*Otras%20notas:*%20"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp-primary py-4 px-6 sm:px-7 text-xs uppercase tracking-[0.2em] font-semibold inline-flex items-center justify-center gap-3 shadow-lg group whitespace-nowrap w-full sm:w-auto min-h-[44px]"
+          >
+            <svg class="w-4 h-4 text-emerald-400 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.838-.76-3.023-2.624-3.114-2.748-.093-.125-.744-.991-.744-1.891 0-.899.47-1.343.637-1.528.167-.184.366-.231.488-.231.122 0 .245.001.352.007.113.006.264-.043.413.315.155.372.528 1.289.574 1.382.046.094.077.203.016.327-.061.124-.092.202-.183.311-.093.109-.196.244-.279.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.139.715 1.503.798 1.717.904.214.106.34.093.468-.053.128-.146.551-.64.698-.86.147-.22.294-.184.496-.109.202.075 1.282.605 1.502.715.22.11.368.164.422.257.054.094.054.544-.09 1.002z"/>
+            </svg>
+            <span>Cotizar Personalización</span>
+            <span class="text-emerald-400 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       6. SECCIÓN DESTACADA: VENTAS AL POR MAYOR & LÍNEA INSTITUCIONAL (B2B)
+       ========================================================================= -->
+  <section id="mayoristas" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-warm-white border-b border-sand/40">
+    <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 border border-sand/50 bg-ivory px-3.5 py-1 text-[11px] font-mono text-leather uppercase tracking-[0.2em]">
+            Ventas al por Mayor
+          </div>
+
+          <h2 class="section-fluid-title font-serif font-light text-charcoal leading-tight">
+            Ventas al por Mayor & <br />
+            <span class="italic text-leather">Dotaciones Institucionales</span>
+          </h2>
+
+          <p class="text-xs sm:text-sm text-charcoal/80 font-light leading-relaxed">
+            Atendemos a empresas, firmas legales, corporativos, clubes deportivos y boutiques que buscan dotaciones de alto nivel o regalos de representación. Transformamos el cuero genuino con el logotipo de tu marca mediante cuños metálicos de grabado en bajo relieve o foil.
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs text-charcoal/80">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-sand/30 flex items-center justify-center text-leather font-mono font-semibold flex-shrink-0 mt-0.5">✓</span>
+              <p><strong>Grabado de Marca Institucional:</strong> Cuño térmico de alta definición con tu logotipo en bajo relieve o foil.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-sand/30 flex items-center justify-center text-leather font-mono font-semibold flex-shrink-0 mt-0.5">✓</span>
+              <p><strong>Escalas por Volumen:</strong> Tarifas preferenciales a partir de 5 unidades para juntas, clubes y empresas.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-sand/30 flex items-center justify-center text-leather font-mono font-semibold flex-shrink-0 mt-0.5">✓</span>
+              <p><strong>Packaging de Lujo:</strong> Cajas individuales con presentación premium y certificado de origen artesanal.</p>
+            </div>
+          </div>
+
+          <!-- Opciones de Consulta Mayorista -->
+          <div class="pt-4 flex flex-col sm:flex-row gap-3">
+            <a 
+              href="https://wa.me/573000000000?text=Hola%20ELICER,%20deseo%20solicitar%20cotizaci%C3%B3n%20para%20*Regalos%20Corporativos*%20o%20*L%C3%ADnea%20Institucional*%20personalizada%20con%20logotipo." 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-whatsapp-primary px-6 py-3.5 text-xs uppercase tracking-[0.18em] font-semibold transition-luxury inline-flex items-center justify-center gap-2.5 shadow-md w-full sm:w-auto min-h-[44px]"
+            >
+              <svg class="w-4 h-4 text-emerald-400 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.838-.76-3.023-2.624-3.114-2.748-.093-.125-.744-.991-.744-1.891 0-.899.47-1.343.637-1.528.167-.184.366-.231.488-.231.122 0 .245.001.352.007.113.006.264-.043.413.315.155.372.528 1.289.574 1.382.046.094.077.203.016.327-.061.124-.092.202-.183.311-.093.109-.196.244-.279.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.139.715 1.503.798 1.717.904.214.106.34.093.468-.053.128-.146.551-.64.698-.86.147-.22.294-.184.496-.109.202.075 1.282.605 1.502.715.22.11.368.164.422.257.054.094.054.544-.09 1.002z"/>
+              </svg>
+              <span>Cotizar Proyecto Institucional</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a 
+              href="https://wa.me/573000000000?text=Hola%20ELICER,%20deseo%20solicitar%20el%20*Cat%C3%A1logo%20Mayorista*%20para%20distribuci%C3%B3n." 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border border-charcoal bg-warm-white text-charcoal hover:bg-charcoal hover:text-ivory px-6 py-3.5 text-xs uppercase tracking-[0.18em] font-semibold transition-luxury inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px]"
+            >
+              <span>Catálogo Mayorista</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Tarjetas de Casos de Uso B2B -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="p-5 sm:p-6 bg-ivory border border-sand/50 space-y-2 sm:space-y-3">
+            <span class="font-mono text-[10px] uppercase text-leather font-semibold tracking-wider">Línea Institucional</span>
+            <h3 class="font-serif text-xl text-charcoal">Dotación Directiva & Juntas</h3>
+            <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+              Carpetas de firma, desk pads y organizadores con el escudo o marca grabada para salas de consejo y presidencia.
+            </p>
+          </div>
+
+          <div class="p-5 sm:p-6 bg-ivory border border-sand/50 space-y-2 sm:space-y-3">
+            <span class="font-mono text-[10px] uppercase text-leather font-semibold tracking-wider">Regalos de Representación</span>
+            <h3 class="font-serif text-xl text-charcoal">Agradecimiento a Clientes</h3>
+            <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+              Tarjeteros slim, billeteras y sets de viaje grabados con las iniciales del agasajado o la marca de la empresa.
+            </p>
+          </div>
+
+          <div class="p-5 sm:p-6 bg-ivory border border-sand/50 space-y-2 sm:space-y-3">
+            <span class="font-mono text-[10px] uppercase text-leather font-semibold tracking-wider">Línea Deportiva & Clubes</span>
+            <h3 class="font-serif text-xl text-charcoal">Torneos & Miembros de Club</h3>
+            <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+              Duffles de viaje, fundas de raquetas/pádel y accesorios personalizados con el escudo oficial del club.
+            </p>
+          </div>
+
+          <div class="p-5 sm:p-6 bg-ivory border border-sand/50 space-y-2 sm:space-y-3">
+            <span class="font-mono text-[10px] uppercase text-leather font-semibold tracking-wider">Línea Premium & Autor</span>
+            <h3 class="font-serif text-xl text-charcoal">Ediciones de Colección</h3>
+            <p class="text-xs text-charcoal/70 font-light leading-relaxed">
+              Confección de piezas numeradas para regalos corporativos de alta jerarquía o proyectos privados de autor.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       7. HISTORIA EDITORIAL: COLOMBIA + CANADÁ
+       ========================================================================= -->
+  <section id="historia" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-espresso text-ivory relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      
+      <div class="lg:col-span-6 space-y-6 sm:space-y-8">
+        <div class="inline-flex items-center gap-2 border border-sand/30 bg-charcoal/50 px-3.5 py-1 text-[11px] font-mono text-sand uppercase tracking-[0.2em]">
+          Conexión Internacional
+        </div>
+
+        <h2 class="section-fluid-title font-serif font-light leading-tight">
+          Hecho en Colombia.<br />
+          <span class="italic font-normal text-sand">Presente en América.</span>
+        </h2>
+
+        <div class="space-y-4 text-xs sm:text-sm text-ivory/80 font-light leading-relaxed">
+          <p>
+            Nacimos del encuentro entre el profundo respeto por la tradición del cuero en Colombia y una visión de diseño sobrio inspirada en el norte del continente.
+          </p>
+          <p>
+            Nuestros talleres en Colombia albergan a maestros artesanos con décadas de destreza manual, transformando curtidos vegetales en piezas que desafían el paso del tiempo. Desde nuestra sede de diseño y distribución en Canadá, conectamos el alma de Latinoamérica con clientes exigentes en todo el continente.
+          </p>
+        </div>
+
+        <!-- Coordenadas / Ciudades -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-6 border-t border-sand/20 font-mono text-xs">
+          <div>
+            <p class="text-sand uppercase tracking-wider text-[10px]">Taller de Manufactura</p>
+            <p class="text-ivory font-medium mt-1">Bogotá, Colombia</p>
+            <p class="text-ivory/50 text-[11px]">4°42′ N • 74°04′ W</p>
+          </div>
+          <div>
+            <p class="text-sand uppercase tracking-wider text-[10px]">Estudio & Enlace Global</p>
+            <p class="text-ivory font-medium mt-1">Montréal / Toronto, Canadá</p>
+            <p class="text-ivory/50 text-[11px]">45°30′ N • 73°34′ W</p>
+          </div>
+        </div>
+
+        <div>
+          <a 
+            href="https://wa.me/573000000000?text=Hola%20ELICER,%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20historia%20y%20proceso%20artesanal." 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-medium text-sand hover:text-ivory transition-colors group min-h-[44px]"
+          >
+            <span>Conectar con el Atelier</span>
+            <span class="transform transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna Fotografía Editorial Asimétrica -->
+      <div class="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
+        <div class="space-y-3 sm:space-y-4">
+          <div class="aspect-[3/4] overflow-hidden bg-charcoal">
+            <img 
+              src="fotos/Premium/Gemini_Generated_Image_azsaxvazsaxvazsa.jpg" 
+              alt="Artesanía y corte manual de cuero" 
+              class="w-full h-full object-cover filter contrast-105 hover:scale-105 transition-all duration-700"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-3 sm:p-4 bg-charcoal/60 border border-sand/20 text-[10px] sm:text-[11px] text-ivory/70 font-light">
+            <strong class="text-sand block mb-1">Curtición Vegetal</strong>
+            Extractos botánicos nobles libres de metales pesados.
+          </div>
+        </div>
+
+        <div class="space-y-3 sm:space-y-4 pt-4 sm:pt-8">
+          <div class="p-3 sm:p-4 bg-charcoal/60 border border-sand/20 text-[10px] sm:text-[11px] text-ivory/70 font-light">
+            <strong class="text-sand block mb-1">Costura a Mano</strong>
+            Puntadas reforzadas para durar generaciones.
+          </div>
+          <div class="aspect-[3/4] overflow-hidden bg-charcoal">
+            <img 
+              src="fotos/deportiva/Gemini_Generated_Image_f2o81cf2o81cf2o8.jpg" 
+              alt="Detalle de herrajes y acabados en cuero" 
+              class="w-full h-full object-cover filter contrast-105 hover:scale-105 transition-all duration-700"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  </main>
+
+  <!-- =========================================================================
+       9. MODAL DE DETALLE DE PRODUCTO (Accesible WCAG 2.2 & Responsive dvh)
+       ========================================================================= -->
+  <div 
+    id="product-detail-modal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modal-product-title" 
+    class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 md:p-10 modal-backdrop overflow-y-auto"
+  >
+    <div class="relative w-full max-w-4xl bg-warm-white border border-sand shadow-2xl p-4 sm:p-8 md:p-10 max-h-[92dvh] overflow-y-auto overscroll-contain">
+      
+      <!-- Botón Cerrar Accesible -->
+      <button 
+        type="button" 
+        id="modal-close-btn"
+        onclick="closeProductModal()" 
+        class="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 text-charcoal hover:text-leather hover:bg-sand/30 transition-colors z-10 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+        aria-label="Cerrar detalle del producto"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Contenido inyectado dinámicamente vía app.js -->
+      <div id="product-modal-content"></div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       11. FOOTER EDITORIAL (Con Logo Principal Nítido y Completo)
+       ========================================================================= -->
+  <footer class="bg-charcoal text-ivory py-16 md:py-20 px-4 sm:px-6 md:px-12 border-t border-sand/20">
+    <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+        
+        <!-- Marca e Identidad -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-[#D4AF37]/80 shadow-md bg-warm-white p-0.5 flex items-center justify-center flex-shrink-0">
+              <img src="fotos/Logos/emblema_circle.jpg" alt="ELICER Emblema" class="w-full h-full object-cover rounded-full" />
+            </div>
+            <div>
+              <span class="font-serif text-2xl sm:text-3xl tracking-[0.25em] font-light block leading-none">ELICER</span>
+              <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] font-mono text-sand mt-1 block">Jorge Eliecer Gómez</span>
+            </div>
+          </div>
+          <p class="font-serif italic text-sand text-base sm:text-lg pt-1">Tu historia. En cada detalle.</p>
+          <p class="text-xs text-ivory/85 font-light max-w-sm leading-relaxed">
+            Marroquinería contemporánea en 5 líneas de oficio: Sport, Deportiva, Marroquinería, Institucional y Premium. Conexión de diseño y taller entre Colombia y Canadá.
+          </p>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div class="md:col-span-3 space-y-3">
+          <p class="text-xs uppercase tracking-[0.2em] text-sand font-mono">Navegación</p>
+          <ul class="space-y-2 text-xs text-ivory/90">
+            <li><a href="#hero" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Inicio</a></li>
+            <li><a href="#vitrina" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Vitrina Virtual</a></li>
+            <li><a href="#personalizacion" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Personalización</a></li>
+            <li><a href="#mayoristas" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Mayoristas</a></li>
+            <li><a href="#historia" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Colombia + Canadá</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto & Atelier -->
+        <div class="md:col-span-4 space-y-3">
+          <p class="text-xs uppercase tracking-[0.2em] text-sand font-mono">Atención & Cotizaciones</p>
+          <p class="text-xs text-ivory/85 leading-relaxed">
+            Canal directo de taller para cotizaciones individuales y pedidos mayoristas:
+          </p>
+          <a 
+            href="https://wa.me/573000000000?text=Hola%20ELICER,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors py-1.5 min-h-[44px] break-all sm:break-normal"
+          >
+            <span>WhatsApp: +57 300 000 0000</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <p class="text-[11px] text-ivory/75 font-mono">Envíos a toda Colombia, Canadá y América.</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-sand/20 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/75 font-mono gap-3 text-center sm:text-left">
+        <p>© 2026 ELICER • Jorge Eliecer Gómez. Todos los derechos reservados.</p>
+        <p>Sport • Deportiva • Marroquinería • Institucional • Premium</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. BOTÓN FLOTANTE SOLO ICONO WHATSAPP (SIEMPRE FIJO EN ESQUINA INFERIOR DERECHA)
+       ========================================================================= -->
+  <aside id="floating-whatsapp-wrapper" class="fixed bottom-6 right-6 z-50 floating-whatsapp-container">
+    <a 
+      id="floating-concierge"
+      href="https://wa.me/573000000000?text=Hola%20ELICER,%20quisiera%20solicitar%20asesor%C3%ADa%20y%20cotizaci%C3%B3n%20para%20piezas%20en%20cuero."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="floating-whatsapp-circle"
+      aria-label="Contactar al taller de ELICER por WhatsApp"
+      title="Contactar por WhatsApp"
+    >
+      <span class="floating-tooltip" aria-hidden="true">Cotizar por WhatsApp</span>
+      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.129-.523-1.838-.76-3.023-2.624-3.114-2.748-.093-.125-.744-.991-.744-1.891 0-.899.47-1.343.637-1.528.167-.184.366-.231.488-.231.122 0 .245.001.352.007.113.006.264-.043.413.315.155.372.528 1.289.574 1.382.046.094.077.203.016.327-.061.124-.092.202-.183.311-.093.109-.196.244-.279.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.139.715 1.503.798 1.717.904.214.106.34.093.468-.053.128-.146.551-.64.698-.86.147-.22.294-.184.496-.109.202.075 1.282.605 1.502.715.22.11.368.164.422.257.054.094.054.544-.09 1.002z"/>
+      </svg>
+    </a>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

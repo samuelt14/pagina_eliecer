@@ -9,10 +9,15 @@ from collections import defaultdict
 
 PORT = 8000
 HOST = "0.0.0.0"
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.realpath(os.path.abspath(os.path.dirname(__file__)))
 
 RATE_LIMIT_WINDOW_SECONDS = 60
 RATE_LIMIT_MAX_REQUESTS = 120
+
+ALLOWED_EXTENSIONS = {
+    ".html", ".css", ".js", ".jpg", ".jpeg", ".png",
+    ".webp", ".svg", ".ico", ".txt", ".xml", ".webmanifest"
+}
 
 class IPRateLimiter:
     def __init__(self, max_requests=RATE_LIMIT_MAX_REQUESTS, window_seconds=RATE_LIMIT_WINDOW_SECONDS):
@@ -53,7 +58,7 @@ class SecureHTTPRequestHandler(BaseHTTPRequestHandler):
             "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
-            "img-src 'self' data: blob: https://images.unsplash.com https://*.unsplash.com; "
+            "img-src 'self' data: blob:; "
             "connect-src 'self'; "
             "frame-ancestors 'none'; "
             "object-src 'none'; "
@@ -133,7 +138,12 @@ class SecureHTTPRequestHandler(BaseHTTPRequestHandler):
 
         # Prevención de Path Traversal mediante resolución canónica (Regla 4, 17)
         target_path = os.path.realpath(os.path.join(BASE_DIR, relative_path))
-        if not target_path.startswith(BASE_DIR):
+        try:
+            is_within_base = os.path.commonpath([BASE_DIR, target_path]) == BASE_DIR
+        except ValueError:
+            is_within_base = False
+
+        if not is_within_base:
             self.send_generic_error(403, "Acceso no autorizado.")
             return
 
@@ -146,8 +156,9 @@ class SecureHTTPRequestHandler(BaseHTTPRequestHandler):
                 self.send_generic_error(403, "Acceso al directorio denegado.")
                 return
 
-        # 4. Verificación de existencia del archivo
-        if not os.path.isfile(target_path):
+        # 4. Verificación de existencia del archivo y lista blanca de extensiones públicas
+        _, ext = os.path.splitext(target_path)
+        if ext.lower() not in ALLOWED_EXTENSIONS or not os.path.isfile(target_path):
             self.send_generic_error(404, "Recurso no encontrado.")
             return
 
@@ -183,8 +194,20 @@ class SecureHTTPRequestHandler(BaseHTTPRequestHandler):
         raw_path = unquote(parsed_url.path)
         relative_path = "index.html" if raw_path in ["", "/"] else raw_path.lstrip("/\\")
 
+        path_segments = [seg for seg in relative_path.replace("\\", "/").split("/") if seg]
+        if any(seg.startswith(".") for seg in path_segments):
+            self.send_response(404)
+            self.end_headers()
+            return
+
         target_path = os.path.realpath(os.path.join(BASE_DIR, relative_path))
-        if not target_path.startswith(BASE_DIR) or not os.path.isfile(target_path):
+        try:
+            is_within_base = os.path.commonpath([BASE_DIR, target_path]) == BASE_DIR
+        except ValueError:
+            is_within_base = False
+
+        _, ext = os.path.splitext(target_path)
+        if not is_within_base or ext.lower() not in ALLOWED_EXTENSIONS or not os.path.isfile(target_path):
             self.send_response(404)
             self.end_headers()
             return

@@ -1,0 +1,7 @@
+server.py
+package.json
+README.md
+.git
+.gitignore
+__pycache__/
+*.pyc

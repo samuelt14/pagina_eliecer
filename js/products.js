@@ -1,9 +1,9 @@
 /**
  * ELICER — Catálogo de Piezas, Líneas Oficiales y Logos
- * 5 Líneas: Sport, Deportiva, Marroquinería, Institucional, Premium
+ * Colecciones activas: Clásica, Sport, Marroquinería y Premium
  */
 
-const WHATSAPP_PHONE = "573000000000"; // Número de WhatsApp de atención y cotizaciones
+const WHATSAPP_PHONE = "15148858825"; // Número oficial de WhatsApp (+1 514 885-8825)
 
 // Mapeo de Logos Oficiales en Alta Definición y Recorte Centrado
 const LINE_LOGOS = {
@@ -11,9 +11,7 @@ const LINE_LOGOS = {
   premium: "fotos/Logos/emblema_circle.jpg",
   clasica: "fotos/Logos/emblema_circle.jpg",
   sport: "fotos/Logos/emblema_sport_deportiva.jpg",
-  deportiva: "fotos/Logos/emblema_sport_deportiva.jpg",
-  marroquineria: "fotos/Logos/emblema_marroquineria_institucional.jpg",
-  institucional: "fotos/Logos/emblema_marroquineria_institucional.jpg"
+  marroquineria: "fotos/Logos/emblema_marroquineria_institucional.jpg"
 };
 
 // Configuración de Identidad Dinámica de Marca por Línea
@@ -32,7 +30,7 @@ const LINE_BRANDING = {
     tagline: "Línea Clásica • Calzado Formal & Alta Zapatería",
     logo: "fotos/Logos/emblema_circle.jpg",
     badge: "Línea Clásica Oficial",
-    desc: "Zapatos formales de corte Oxford, Blucher y Rivera en cueros finos con suelas de cuero grupón y stanfort."
+    desc: "Zapatos formales de corte Oxford, Blucher y Rivera en cueros finos con suelas de cuero grupón y Stanfort."
   },
   sport: {
     name: "ELICER SPORT",
@@ -40,15 +38,7 @@ const LINE_BRANDING = {
     tagline: "Línea Sport • Calzado Casual, Nobuck & Suelas Confort",
     logo: "fotos/Logos/emblema_sport_deportiva.jpg",
     badge: "Línea Sport Oficial",
-    desc: "Calzado urbano contemporáneo en cuero nobuck, montana y floter con suelas falg, falk, junior p.u. y carlo spanso."
-  },
-  deportiva: {
-    name: "ELICER DEPORTIVA",
-    subtitle: "Sports Shoes & Accessories",
-    tagline: "Línea Deportiva • Athleisure, Torneos & Club",
-    logo: "fotos/Logos/emblema_sport_deportiva.jpg",
-    badge: "Línea Deportiva Oficial",
-    desc: "Duffles weekend con zapatero independiente y fundas térmicas para raquetas de tenis y palas de pádel."
+    desc: "Calzado urbano contemporáneo en cuero nobuck, montana y floter con suelas Falg, Falk, Junior P.U. y Carlo Spanso."
   },
   marroquineria: {
     name: "ELICER MARROQUINERÍA",
@@ -56,15 +46,7 @@ const LINE_BRANDING = {
     tagline: "Línea Marroquinería • Tradición, Pátina & Oficio",
     logo: "fotos/Logos/emblema_marroquineria_institucional.jpg",
     badge: "Línea Marroquinería Oficial",
-    desc: "Billeteras bifold de perfil plano, tarjeteros biselados al fuego y cinturones macizos de montura en 4mm."
-  },
-  institucional: {
-    name: "ELICER INSTITUCIONAL",
-    subtitle: "Premium Footwear & Accessories",
-    tagline: "Línea Institucional • Corporativo, Juntas & Dotaciones B2B",
-    logo: "fotos/Logos/emblema_marroquineria_institucional.jpg",
-    badge: "Línea Institucional B2B",
-    desc: "Carpetas de firma directiva y desk pads ejecutivos con grabado de logotipo empresarial masivo."
+    desc: "Billeteras bifold de perfil plano, tarjeteros biselados al fuego, bolsos y cinturones macizos de montura en 4 mm."
   },
   premium: {
     name: "ELICER PREMIUM",
@@ -87,9 +69,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Clásica",
     lineLogo: LINE_LOGOS.clasica,
     tagline: "Acabado artesanal difuminado a mano en tono miel cálido con suela Stanfort antideslizante",
-    image: "fotos/Clasica/Napa miel difuminado suela stanfort.jpg",
+    image: "fotos/Clasica/napa-miel-difuminado-suela-stanfort.jpg",
     gallery: [
-      "fotos/Clasica/Napa miel difuminado suela stanfort.jpg"
+      "fotos/Clasica/napa-miel-difuminado-suela-stanfort.jpg"
     ],
     description: "Diseño clásico y versátil confeccionado en cuero vacuno Napa seleccionado. Destaca por su pátina artesanal difuminada al alcohol en tonos miel dorados, forro completo en badana suave y suela Stanfort que garantiza tracción y durabilidad.",
     specs: {
@@ -109,9 +91,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Clásica",
     lineLogo: LINE_LOGOS.clasica,
     tagline: "Sofisticada combinación en cuero Sheraton coñac/café con detalles y vivo azul",
-    image: "fotos/Clasica/sheraton coñac cafe por azul suela stanfort.jpg",
+    image: "fotos/Clasica/sheraton-conac-cafe-azul-suela-stanfort.jpg",
     gallery: [
-      "fotos/Clasica/sheraton coñac cafe por azul suela stanfort.jpg"
+      "fotos/Clasica/sheraton-conac-cafe-azul-suela-stanfort.jpg"
     ],
     description: "Una distinguida pieza de autor con silueta Sheraton. Combina cuero vacuno tono coñac y café chocolate con un delicado vivo azul en el ribete. Montado sobre suela Stanfort con vira pespunteada para un uso diario elegante.",
     specs: {
@@ -131,9 +113,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Clásica",
     lineLogo: LINE_LOGOS.clasica,
     tagline: "Construcción artesanal de alta zapatería con entresuela Spanso amortiguada y piso en cuero grupón",
-    image: "fotos/Clasica/Suela spanso suela cuero grupon.jpg",
+    image: "fotos/Clasica/suela-spanso-suela-cuero-grupon.jpg",
     gallery: [
-      "fotos/Clasica/Suela spanso suela cuero grupon.jpg"
+      "fotos/Clasica/suela-spanso-suela-cuero-grupon.jpg"
     ],
     description: "Zapato de etiqueta confeccionado bajo los más exigentes estándares de la zapatería tradicional. Incorpora una innovadora entresuela Spanso que absorbe el impacto de cada paso, combinada con un piso macizo de cuero grupón legítimo.",
     specs: {
@@ -153,9 +135,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Clásica",
     lineLogo: LINE_LOGOS.clasica,
     tagline: "Grabado repujado de textura fina sobre cuero negro con suela de cuero grupón artesanal",
-    image: "fotos/Clasica/Zaparo rivera negro repujado forro vadana suela cuero grupon.jpg",
+    image: "fotos/Clasica/zapato-rivera-negro-repujado-suela-cuero-grupon.jpg",
     gallery: [
-      "fotos/Clasica/Zaparo rivera negro repujado forro vadana suela cuero grupon.jpg"
+      "fotos/Clasica/zapato-rivera-negro-repujado-suela-cuero-grupon.jpg"
     ],
     description: "Silueta Rivera con grabado repujado en panel superior que aporta carácter y sofisticación única. Suela en auténtico cuero grupón curtido al tanino con tacón reforzado y forro interno en badana suave.",
     specs: {
@@ -175,9 +157,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Clásica",
     lineLogo: LINE_LOGOS.clasica,
     tagline: "Silueta sobria y formal en cuero negro liso impecable con genuina suela de cuero grupón",
-    image: "fotos/Clasica/zapato rivera negro forro cuero vadana suelka cuero grupon.jpg",
+    image: "fotos/Clasica/zapato-rivera-negro-liso-suela-cuero-grupon.jpg",
     gallery: [
-      "fotos/Clasica/zapato rivera negro forro cuero vadana suelka cuero grupon.jpg"
+      "fotos/Clasica/zapato-rivera-negro-liso-suela-cuero-grupon.jpg"
     ],
     description: "El zapato formal definitivo para ceremonias, juntas directivas y ocasiones de máxima etiqueta. Confeccionado en cuero vacuno negro liso impecable, con forro completo de badana y suela de cuero grupón con cantos sellados al fuego.",
     specs: {
@@ -201,9 +183,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Acabado terciopelo en nobuck gris con cordonera de nudo marinero y suela Falg ligera",
-    image: "fotos/sport/NOBUCK GRIS NUDO SUELA FALG.jpg",
+    image: "fotos/sport/nobuck-gris-nudo-suela-falg.jpg",
     gallery: [
-      "fotos/sport/NOBUCK GRIS NUDO SUELA FALG.jpg"
+      "fotos/sport/nobuck-gris-nudo-suela-falg.jpg"
     ],
     description: "Calzado contemporáneo confeccionado en cuero vacuno Nobuck de tacto aterciopelado tono gris neutro. Detalle artesanal de nudo marinero en la cordonera y montado sobre una suela Falg ultraligera que amortigua cada paso en la ciudad.",
     specs: {
@@ -223,9 +205,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Fusión sport-casual en cuero Sheranton tono coñac con ribetes azul marino y suela TR bicolor",
-    image: "fotos/sport/sheranton coñac por azul suela bicolor TR.jpg",
+    image: "fotos/sport/sheranton-conac-azul-suela-bicolor-tr.jpg",
     gallery: [
-      "fotos/sport/sheranton coñac por azul suela bicolor TR.jpg"
+      "fotos/sport/sheranton-conac-azul-suela-bicolor-tr.jpg"
     ],
     description: "Pieza dinámica con estética de taller. Confeccionada en cuero vacuno Sheranton tono coñac miel, realzado con vivos en cuero azul marino y una suela de termocaucho (TR) bicolor diseñada para máxima flexibilidad y agarre.",
     specs: {
@@ -245,9 +227,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Textura granulada Floter en tono coñac con suela de poliuretano (P.U.) de pisada suave",
-    image: "fotos/sport/ZAPATO CUERO FLOTER COÑAC SUELA JUNIOR P.U.jpg",
+    image: "fotos/sport/zapato-cuero-floter-conac-suela-junior-pu.jpg",
     gallery: [
-      "fotos/sport/ZAPATO CUERO FLOTER COÑAC SUELA JUNIOR P.U.jpg"
+      "fotos/sport/zapato-cuero-floter-conac-suela-junior-pu.jpg"
     ],
     description: "Diseñado para quienes buscan confort ininterrumpido sin renunciar a la elegancia del cuero natural. El cuero Floter ofrece una textura suave al tacto y gran resistencia al quiebre, montado sobre una suela inyectada Junior P.U. que aísla las irregularidades del pavimento.",
     specs: {
@@ -267,9 +249,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Resistencia rústica en cuero Montana tono miel con entresuela Carlo Spanso anatómica",
-    image: "fotos/sport/ZAPATO CUERO MONTANA COLOR MIEL SUELA CARLO SPANSO CONFORT.jpg",
+    image: "fotos/sport/zapato-cuero-montana-miel-suela-carlo-spanso.jpg",
     gallery: [
-      "fotos/sport/ZAPATO CUERO MONTANA COLOR MIEL SUELA CARLO SPANSO CONFORT.jpg"
+      "fotos/sport/zapato-cuero-montana-miel-suela-carlo-spanso.jpg"
     ],
     description: "Robusto y con personalidad. Confeccionado en cuero vacuno Montana en tono miel con efecto pull-up que envejece con una pátina inigualable. La suela Carlo Spanso proporciona un lecho acolchado para caminar durante todo el día.",
     specs: {
@@ -289,9 +271,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Versatilidad de día y noche en cuero Napa negro pulido con suela Stanfort deportiva",
-    image: "fotos/sport/ZAPATO NAOA NEGRO BRILLANTE SUELA STANFORT.jpg",
+    image: "fotos/sport/zapato-napa-negro-brillante-suela-stanfort.jpg",
     gallery: [
-      "fotos/sport/ZAPATO NAOA NEGRO BRILLANTE SUELA STANFORT.jpg"
+      "fotos/sport/zapato-napa-negro-brillante-suela-stanfort.jpg"
     ],
     description: "El equilibrio exacto entre el calzado formal y el sport urbano. Confeccionado en cuero Napa negro lustrado que resalta por su brillo impecable, combinado con una base Stanfort flexible apta para jornadas activas.",
     specs: {
@@ -311,9 +293,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Estilo contemporáneo en cuero nobuck gris ceniza con suela ergonómica Falk",
-    image: "fotos/sport/ZAPATO NOBUCK GRIS SUELA FALK.jpg",
+    image: "fotos/sport/zapato-nobuck-gris-suela-falk.jpg",
     gallery: [
-      "fotos/sport/ZAPATO NOBUCK GRIS SUELA FALK.jpg"
+      "fotos/sport/zapato-nobuck-gris-suela-falk.jpg"
     ],
     description: "Una silueta moderna y cosmopolita. La finura del Nobuck en tono gris ceniza se combina con pespuntes artesanales precisos y una suela Falk de goma ligera de excelente respuesta en suelo urbano.",
     specs: {
@@ -333,9 +315,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Sport",
     lineLogo: LINE_LOGOS.sport,
     tagline: "Confort urbano premium en cuero Sheranton negro profundo con interior en badana natural",
-    image: "fotos/sport/ZAPATO SHERANTON NEGRO SUELA SPANSO FORRO VADANA.jpg",
+    image: "fotos/sport/zapato-sheranton-negro-suela-spanso.jpg",
     gallery: [
-      "fotos/sport/ZAPATO SHERANTON NEGRO SUELA SPANSO FORRO VADANA.jpg"
+      "fotos/sport/zapato-sheranton-negro-suela-spanso.jpg"
     ],
     description: "Calzado sobrio en cuero vacuno Sheranton negro satinado. Su interior forrado totalmente en badana de cordero/res ofrece un calce de guante, apoyado por una suela Spanso diseñada para aliviar la presión plantar.",
     specs: {
@@ -350,13 +332,9 @@ const PRODUCTS_DATA = [
   },
 
   // =========================================================================
-  // 3. LÍNEA DEPORTIVA (En preparación de nuevos modelos de taller)
-  // =========================================================================
-
-  // =========================================================================
   // 3. LÍNEA MARROQUINERÍA (Fotos reales de taller)
   // =========================================================================
-    // -------------------------------------------------------------------------
+  // -------------------------------------------------------------------------
   // CINTURONES TRENTO & SISTEMA AUTOMÁTICO RATCHET
   // -------------------------------------------------------------------------
   {
@@ -374,10 +352,10 @@ const PRODUCTS_DATA = [
     description: "Cinturón artesanal de la colección Trento confeccionado en cuero vacuno plena flor tono café chocolate profundo con pespunte perimetral reforzado. Destaca por su montura con aplique en cuero caramelo contrastante, pasador en cuero repujado con el ciervo y sello heráldico 'TRENTO', y hebilla rectangular clásica en acabado níquel satinado. Una pieza robusta y distinguida para uso formal o casual.",
     specs: {
       material: "Cuero vacuno plena flor curtido vegetal (calibre 3.8 mm)",
-      ancho: "35 mm (ancho estándar formal y casual)",
+      curtido: "Curtición vegetal en tanino natural con cantos bruñidos",
+      dimensiones: "Ancho: 35 mm | Talla adaptada a la medida del cliente (28 a 46)",
       herrajes: "Hebilla clásica de perno rectangular en níquel satinado antialérgico",
       detalles: "Pasador repujado con sello Trento y refuerzo contrastante",
-      ajuste: "5 perforaciones ovaladas de ajuste milimétrico con cantos sellados al calor",
       personalizacion: "Grabado de iniciales en la cara interna de la correa"
     },
     badge: "Colección Trento",
@@ -399,10 +377,10 @@ const PRODUCTS_DATA = [
     specs: {
       material: "Cuero vacuno graneado de textura firme y flexible",
       sistema: "Mecanismo automático ratchet con cremallera interior oculta (sin huecos)",
-      ancho: "35 mm estándar ejecutivo",
+      dimensiones: "Ancho: 35 mm estándar ejecutivo | Correa recortable a medida",
       herrajes: "Hebilla rectangular gunmetal con aplique esmaltado negro y gatillo de liberación rápida",
-      forro: "Interior reforzado en piel nobuk/carnaza taupe con riel de nylon de alta resistencia",
-      ajuste: "Correa recortable fácilmente en casa para adaptarse a cualquier talla de cintura"
+      forro: "Interior reforzado en piel nobuk/carnaza taupe con riel de alta resistencia",
+      personalizacion: "Grabado de iniciales a calor en la puntera interior"
     },
     badge: "Ajuste Ratchet",
     features: ["Microajuste sin perforaciones (30+ puntos)", "Hebilla gunmetal con inserto esmaltado", "Talla recortable a la medida exacta"]
@@ -423,10 +401,10 @@ const PRODUCTS_DATA = [
     specs: {
       material: "Cuero vacuno napa lisa plena flor tono café espresso",
       sistema: "Cierre automático de presión milimétrico de liberación suave",
-      ancho: "35 mm",
+      dimensiones: "Ancho: 35 mm | Microajuste continuo sin perforaciones",
       herrajes: "Placa maciza gunmetal cepillada con tratamiento antihuellas",
       estructura: "Alma reforzada antitorsión y cantos pulidos con cera botánica",
-      ajuste: "Microajuste continuo de precisión milimétrica sin perforaciones antiestéticas"
+      personalizacion: "Monograma grabado en bajo relieve en el reverso"
     },
     badge: "Línea Ejecutiva",
     features: ["Cuero napa liso café espresso", "Hebilla automática maciza gunmetal", "Sistema libre de perforaciones anti-desgaste"]
@@ -1504,11 +1482,7 @@ const PRODUCTS_DATA = [
   },
 
   // =========================================================================
-  // 4. LÍNEA INSTITUCIONAL (Dotaciones y proyectos corporativos B2B a medida)
-  // =========================================================================
-
-  // =========================================================================
-  // 5. LÍNEA PREMIUM (Fotos reales de taller)
+  // 4. LÍNEA PREMIUM (Fotos reales de taller)
   // =========================================================================
   {
     id: "el-pm-01",
@@ -1517,9 +1491,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Bota de alta gama combinando cuero Rivera y caña en ante café sobre suela EVA tractor",
-    image: "fotos/Premium/Bota cuero rivera por ante cafe suela eva tractor.jpg",
+    image: "fotos/Premium/bota-cuero-rivera-ante-cafe-suela-eva-tractor.jpg",
     gallery: [
-      "fotos/Premium/Bota cuero rivera por ante cafe suela eva tractor.jpg"
+      "fotos/Premium/bota-cuero-rivera-ante-cafe-suela-eva-tractor.jpg"
     ],
     description: "Imponente bota de autor con diseño de inspiración militar y acabados de lujo. La puntera y talonera en cuero Rivera en tono café tostado contrastan con la caña de ante sedoso. Montada sobre suela EVA tipo tractor de agarre supremo y peso mínimo.",
     specs: {
@@ -1539,9 +1513,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Expresión suprema de pátina manual con degradé miel a coñac y suela de cuero grupón macizo",
-    image: "fotos/Premium/Botas cuero difuminado miel coñac suelka grupon.jpg",
+    image: "fotos/Premium/botas-cuero-difuminado-miel-conac-suela-grupon.jpg",
     gallery: [
-      "fotos/Premium/Botas cuero difuminado miel coñac suelka grupon.jpg"
+      "fotos/Premium/botas-cuero-difuminado-miel-conac-suela-grupon.jpg"
     ],
     description: "Obra maestra de talabartería y zapatería artesanal. El cuero curtido vegetal recibe múltiples capas de tinte aplicadas a mano hasta lograr una pátina que transita del miel dorado al coñac oscuro. Suela maciza de cuero grupón de calibre grueso con cantos encerados.",
     specs: {
@@ -1561,9 +1535,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Cuero Crosta noble con tintura bitono miel-marrón sobre liviana suela EVA importada España",
-    image: "fotos/Premium/Zapato cuero crosta miel marron suela eva españa.jpg",
+    image: "fotos/Premium/zapato-cuero-crosta-miel-marron-suela-eva-espana.jpg",
     gallery: [
-      "fotos/Premium/Zapato cuero crosta miel marron suela eva españa.jpg"
+      "fotos/Premium/zapato-cuero-crosta-miel-marron-suela-eva-espana.jpg"
     ],
     description: "Zapato artesanal elaborado sobre base de cuero Crosta de absorción profunda, teñido a mano en una armonía bitono miel y marrón café. La suela de formulación EVA importada de España otorga una ligereza incomparable.",
     specs: {
@@ -1583,9 +1557,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Corte sevillano de gala en cuero crosta con difuminado dorado miel de acabado veneciano",
-    image: "fotos/Premium/Zapato cuero crosta sevillano miel difuminado.jpg",
+    image: "fotos/Premium/zapato-cuero-crosta-sevillano-miel-difuminado.jpg",
     gallery: [
-      "fotos/Premium/Zapato cuero crosta sevillano miel difuminado.jpg"
+      "fotos/Premium/zapato-cuero-crosta-sevillano-miel-difuminado.jpg"
     ],
     description: "Elegancia aristocrática en un corte sevillano estilizado. La piel Crosta es tratada con bálsamos y ceras de carnaúba para lograr un brillo profundo con efecto sombreado en cantos y puntera.",
     specs: {
@@ -1605,9 +1579,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Distinción de autor en cuero crosta teñido verde profundo con laterales de ante y suela EVA italiana",
-    image: "fotos/Premium/Zapato cuero crosta verde por ante suela eva italiana.jpg",
+    image: "fotos/Premium/zapato-cuero-crosta-verde-ante-suela-eva-italiana.jpg",
     gallery: [
-      "fotos/Premium/Zapato cuero crosta verde por ante suela eva italiana.jpg"
+      "fotos/Premium/zapato-cuero-crosta-verde-ante-suela-eva-italiana.jpg"
     ],
     description: "Una de las piezas más emblemáticas del taller. La atrevida y refinada tonalidad verde esmeralda sobre cuero Crosta se equilibra con inserciones laterales de ante suave y una suela EVA italiana esculpida.",
     specs: {
@@ -1627,9 +1601,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Exquisita textura combinada de gamuza ante café con detalles en cuero napa y suela Timberland",
-    image: "fotos/Premium/Zapato cuerro gamuza ppr ante cafe napa suela timberlant.jpg",
+    image: "fotos/Premium/zapato-cuero-gamuza-ante-cafe-napa-suela-timberland.jpg",
     gallery: [
-      "fotos/Premium/Zapato cuerro gamuza ppr ante cafe napa suela timberlant.jpg"
+      "fotos/Premium/zapato-cuero-gamuza-ante-cafe-napa-suela-timberland.jpg"
     ],
     description: "Fusión de texturas nobles: la calidez de la gamuza ante café y la resistencia lisa del cuero Napa en cuello y puntera. Suela dentada tipo Timberland que entrega adherencia total sobre cualquier superficie.",
     specs: {
@@ -1649,9 +1623,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Coloración artística azul rey con sombras perimetrales sobre suela EVA Martin ultraliviana",
-    image: "fotos/Premium/cuero crosta azul difuminado rey suela eva martin.jpg",
+    image: "fotos/Premium/cuero-crosta-azul-difuminado-rey-suela-eva-martin.jpg",
     gallery: [
-      "fotos/Premium/cuero crosta azul difuminado rey suela eva martin.jpg"
+      "fotos/Premium/cuero-crosta-azul-difuminado-rey-suela-eva-martin.jpg"
     ],
     description: "Una declaración de estilo y audacia sartorial. Cuero Crosta teñido a mano en un vibrante tono azul rey con sombras difuminadas hacia los cantos. Montado sobre la exclusiva suela EVA Martin que ofrece ligereza extrema y pisada silenciosa.",
     specs: {
@@ -1671,9 +1645,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Pátina degradé miel tostado a coñac oscuro con picado brogue fino de alta costura",
-    image: "fotos/Premium/cuero crosta miel coñac difuminado.jpg",
+    image: "fotos/Premium/cuero-crosta-miel-conac-difuminado.jpg",
     gallery: [
-      "fotos/Premium/cuero crosta miel coñac difuminado.jpg"
+      "fotos/Premium/cuero-crosta-miel-conac-difuminado.jpg"
     ],
     description: "El clasicismo elevado al arte zapatero. Confección artesanal en cuero Crosta con perforado brogue milimétrico y un degradado de color que funde el miel cálido en la pala con el coñac profundo en la puntera y talón.",
     specs: {
@@ -1693,9 +1667,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Cuero engrasado y encerado en tono azul profundo con suela dentada Timberland de máxima tracción",
-    image: "fotos/Premium/zapato cuero encerado azul suela timberlant.jpg",
+    image: "fotos/Premium/zapato-cuero-encerado-azul-suela-timberland.jpg",
     gallery: [
-      "fotos/Premium/zapato cuero encerado azul suela timberlant.jpg"
+      "fotos/Premium/zapato-cuero-encerado-azul-suela-timberland.jpg"
     ],
     description: "Resistente, sobrio y distintivo. El cuero vacuno encerado en tono azul petróleo repele la humedad y gana belleza con el uso. Su base de caucho dentada Timberland ofrece tracción insuperable en asfalto húmedo o adoquines.",
     specs: {
@@ -1715,9 +1689,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Pureza y elegancia italiana en cuero napolitano blanco inmaculado montado sobre suela Timberland",
-    image: "fotos/Premium/zapato cuero napolitano blanco suela timberlant.jpg",
+    image: "fotos/Premium/zapato-cuero-napolitano-blanco-suela-timberland.jpg",
     gallery: [
-      "fotos/Premium/zapato cuero napolitano blanco suela timberlant.jpg"
+      "fotos/Premium/zapato-cuero-napolitano-blanco-suela-timberland.jpg"
     ],
     description: "El lujo minimalista en su máxima expresión. Confeccionado en cuero Napolitano de suavidad extrema en un blanco nítido y radiante, montado sobre una sólida base dentada Timberland en contraste que le otorga presencia y firmeza.",
     specs: {
@@ -1737,9 +1711,9 @@ const PRODUCTS_DATA = [
     lineName: "Línea Premium",
     lineLogo: LINE_LOGOS.premium,
     tagline: "Tonalidad humo (fumo) en suave gamuza de alta gama combinada con suela robusta Timberland",
-    image: "fotos/Premium/zapatos cuero gamuza fumo suela timberland.jpg",
+    image: "fotos/Premium/zapatos-cuero-gamuza-fumo-suela-timberland.jpg",
     gallery: [
-      "fotos/Premium/zapatos cuero gamuza fumo suela timberland.jpg"
+      "fotos/Premium/zapatos-cuero-gamuza-fumo-suela-timberland.jpg"
     ],
     description: "Un zapato exclusivo en gamuza de primera selección en el sofisticado tono 'fumo' (gris humo / ceniza profundo). La riqueza de su textura aterciopelada contrasta armoniosamente con la suela Timberland, creando una pieza de gran carácter y confort.",
     specs: {

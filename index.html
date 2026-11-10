@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>ELICER — Marroquinería Contemporánea & 5 Líneas de Oficio | Colombia • Canadá</title>
-  <meta name="description" content="ELICER presenta sus 5 líneas oficiales en cuero genuino: Sport, Deportiva, Marroquinería, Institucional y Premium. Personalización a medida y cotización directa por WhatsApp." />
+  <title>ELICER — Calzado & Marroquinería de Autor en Cuero Genuino | Colombia • Canadá</title>
+  <meta name="description" content="ELICER presenta sus colecciones oficiales en cuero genuino: Clásica, Sport, Marroquinería y Premium. Personalización a medida, dotaciones corporativas y cotización directa por WhatsApp." />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,30 +44,49 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:site_name" content="ELICER" />
-  <meta property="og:title" content="ELICER — Marroquinería Contemporánea & 5 Líneas de Oficio | Colombia • Canadá" />
-  <meta property="og:description" content="ELICER presenta sus 5 líneas oficiales en cuero genuino: Sport, Deportiva, Marroquinería, Institucional y Premium. Personalización a medida y cotización directa de taller." />
+  <meta property="og:title" content="ELICER — Calzado & Marroquinería de Autor en Cuero Genuino | Colombia • Canadá" />
+  <meta property="og:description" content="Colecciones oficiales en cuero genuino: Clásica, Sport, Marroquinería y Premium. Personalización a medida y cotización directa de taller." />
   <meta property="og:image" content="fotos/Logos/emblema_circle.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ELICER — Marroquinería Contemporánea & 5 Líneas de Oficio" />
-  <meta name="twitter:description" content="Cinco líneas de oficio en cuero legítimo. Taller en Colombia y estudio en Canadá." />
+  <meta name="twitter:title" content="ELICER — Calzado & Marroquinería de Autor" />
+  <meta name="twitter:description" content="Oficio artesanal en cuero legítimo. Taller en Colombia y estudio en Canadá." />
   <meta name="twitter:image" content="fotos/Logos/emblema_circle.jpg" />
 
-  <!-- Security & Privacy Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://images.unsplash.com https://*.unsplash.com; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; upgrade-insecure-requests;" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <!-- Security & Privacy Meta -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me;" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+
+  <!-- Datos Estructurados Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "name": "ELICER — Jorge Eliecer Gómez",
+    "description": "Calzado artesanal y marroquinería contemporánea en cuero genuino. Líneas Clásica, Sport, Marroquinería y Premium.",
+    "logo": "fotos/Logos/emblema_circle.jpg",
+    "telephone": "+1-514-885-8825",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-514-885-8825",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish", "French", "English"]
+    }
+  }
+  </script>
 
   <!-- Estilos Custom -->
-  <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css?v=11" />
 </head>
 
 <body class="bg-ivory text-charcoal font-sans antialiased selection:bg-sand selection:text-charcoal">
+  <!-- Skip Link Accesible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
   <header id="main-navbar" class="fixed top-0 left-0 right-0 z-40 text-ivory transition-luxury py-3 sm:py-4 px-4 sm:px-6 md:px-12 safe-top-padding">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Logo Oficial / Marca -->
-      <a href="#hero" class="flex items-center gap-2.5 sm:gap-3.5 group" aria-label="ELICER — Inicio">
+      <a href="#inicio" class="flex items-center gap-2.5 sm:gap-3.5 group" aria-label="ELICER — Inicio" data-route="inicio">
         <div class="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full overflow-hidden border border-[#D4AF37]/70 shadow-md bg-warm-white p-0.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
           <img 
             id="nav-logo-img"
@@ -88,10 +107,11 @@
 
       <!-- Menú Central (Desktop) -->
       <nav aria-label="Navegación principal desktop" class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium">
-        <a href="#vitrina" class="nav-link-item hover:text-leather transition-colors py-1">Vitrina</a>
-        <a href="#personalizacion" class="nav-link-item hover:text-leather transition-colors py-1">Personalización</a>
-        <a href="#mayoristas" class="nav-link-item hover:text-leather transition-colors py-1">Mayoristas</a>
-        <a href="#historia" class="nav-link-item hover:text-leather transition-colors py-1">Historia</a>
+        <a href="#inicio" class="nav-link-item hover:text-leather transition-colors py-1" data-route="inicio">Inicio</a>
+        <a href="#vitrina" class="nav-link-item hover:text-leather transition-colors py-1" data-route="vitrina">Catálogo</a>
+        <a href="#personalizacion" class="nav-link-item hover:text-leather transition-colors py-1" data-route="personalizacion">Personalización</a>
+        <a href="#mayoristas" class="nav-link-item hover:text-leather transition-colors py-1" data-route="mayoristas">Mayoristas</a>
+        <a href="#historia" class="nav-link-item hover:text-leather transition-colors py-1" data-route="historia">Historia</a>
       </nav>
 
       <!-- Botón Móvil Accesible -->
@@ -146,16 +166,17 @@
       </div>
 
       <nav aria-label="Navegación móvil" class="flex flex-col space-y-5 text-sm uppercase tracking-[0.2em] font-medium">
-        <a href="#vitrina" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Vitrina Virtual</a>
-        <a href="#personalizacion" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Personalización</a>
-        <a href="#mayoristas" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Mayoristas</a>
-        <a href="#historia" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center">Nuestra Historia</a>
+        <a href="#inicio" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center" data-route="inicio">Inicio</a>
+        <a href="#vitrina" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center" data-route="vitrina">Catálogo de Piezas</a>
+        <a href="#personalizacion" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center" data-route="personalizacion">Personalización</a>
+        <a href="#mayoristas" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center" data-route="mayoristas">Ventas al por Mayor</a>
+        <a href="#historia" class="mobile-nav-link text-charcoal hover:text-leather transition-colors py-1.5 touch-target-min flex items-center" data-route="historia">Nuestra Historia</a>
       </nav>
     </div>
 
     <div class="pt-6 border-t border-sand/40">
       <a 
-        href="https://wa.me/573000000000?text=Hola%20ELICER,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." 
+        href="https://wa.me/15148858825?text=Hola%20ELICER,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." 
         target="_blank"
         rel="noopener noreferrer"
         class="w-full bg-[#128C7E] hover:bg-[#075E54] text-white py-3.5 px-4 text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2 font-semibold shadow-md transition-colors min-h-[44px]"
@@ -170,74 +191,216 @@
   </aside>
 
   <!-- =========================================================================
-       CONTENIDO PRINCIPAL
+       CONTENIDO PRINCIPAL: VISTAS MODULARES (SPA)
        ========================================================================= -->
   <main id="main-content">
 
   <!-- =========================================================================
-       2. HERO EDITORIAL DE ALTO IMPACTO
+       1. VISTA: INICIO (HERO CON CARRUSEL DINÁMICO DE CATÁLOGO + RESUMEN EDITORIAL)
        ========================================================================= -->
-  <section id="hero" class="relative min-h-[100dvh] flex items-center justify-center bg-charcoal overflow-hidden pt-24 pb-16 px-4 sm:px-6 md:px-12">
-    
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="fotos/Premium/Gemini_Generated_Image_azsaxvazsaxvazsa.jpg" 
-        alt="ELICER Cuero Contemporáneo" 
-        class="w-full h-full object-cover object-center filter brightness-75 scale-105 transition-transform duration-1000 ease-out"
-      />
-      <div class="absolute inset-0 hero-gradient"></div>
-    </div>
-
-    <div class="relative z-10 max-w-4xl mx-auto text-center text-ivory space-y-6 sm:space-y-8">
+  <div id="view-inicio" class="spa-view">
+    <section id="hero" class="relative min-h-[100dvh] flex flex-col justify-between bg-charcoal overflow-hidden pt-24 sm:pt-28 pb-24 sm:pb-12 px-4 sm:px-6 md:px-12">
       
-      <div class="inline-flex items-center gap-2 sm:gap-3 border border-[#D4AF37]/50 bg-charcoal/70 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg max-w-full">
-        <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-[#D4AF37]/80 flex-shrink-0">
-          <img src="fotos/Logos/emblema_circle.jpg" alt="ELICER Emblema" class="w-full h-full object-cover" />
+      <!-- Fondo Dinámico Crossfade con Productos del Catálogo -->
+      <div id="hero-carousel-bg" class="absolute inset-0 z-0 bg-charcoal">
+        <img 
+          id="hero-bg-img-a"
+          src="fotos/Premium/botas-cuero-difuminado-miel-conac-suela-grupon.jpg" 
+          alt="ELICER Alta Zapatería y Marroquinería en Cuero Genuino" 
+          class="hero-bg-slide active-slide w-full h-full object-cover object-center"
+        />
+        <img 
+          id="hero-bg-img-b"
+          src="fotos/Clasica/sheraton-conac-cafe-azul-suela-stanfort.jpg" 
+          alt="" 
+          aria-hidden="true"
+          class="hero-bg-slide w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 hero-gradient pointer-events-none"></div>
+      </div>
+
+      <!-- Espaciador superior para centrado óptico -->
+      <div class="hidden sm:block" aria-hidden="true"></div>
+
+      <!-- Contenido Editorial Central -->
+      <div class="relative z-10 max-w-4xl mx-auto text-center text-ivory space-y-5 sm:space-y-7 my-auto py-4">
+        
+        <div class="inline-flex items-center gap-2 sm:gap-3 border border-[#D4AF37]/50 bg-charcoal/70 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg max-w-full">
+          <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-[#D4AF37]/80 flex-shrink-0">
+            <img src="fotos/Logos/emblema_circle.jpg" alt="ELICER Emblema" class="w-full h-full object-cover" />
+          </div>
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-mono text-sand truncate">Hecho en Colombia • Presente en América</span>
         </div>
-        <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-mono text-sand truncate">Hecho en Colombia • Presente en América</span>
+
+        <h1 class="hero-fluid-title font-serif tracking-tight font-light">
+          Diseñado para <br class="hidden sm:inline" />
+          <span class="italic font-normal">ser único.</span>
+        </h1>
+
+        <p class="font-sans text-xs sm:text-base md:text-lg text-ivory/90 max-w-2xl mx-auto font-light leading-relaxed px-2 sm:px-0">
+          Calzado de autor y marroquinería contemporánea creados en cuero genuino con oficio artesanal. Consulta disponibilidad y cotiza directamente con nuestro taller a través de WhatsApp.
+        </p>
+
+        <!-- Botones de Acción -->
+        <div class="pt-2 sm:pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-5 w-full max-w-xs sm:max-w-none mx-auto">
+          <a 
+            href="#vitrina" 
+            class="w-full sm:w-auto bg-warm-white text-charcoal hover:bg-ivory py-3.5 sm:py-4 px-6 sm:px-8 text-xs uppercase tracking-[0.2em] font-semibold transition-luxury flex items-center justify-center gap-3 shadow-lg min-h-[44px]"
+            data-route="vitrina"
+          >
+            <span>Explorar Catálogo</span>
+            <span class="text-leather" aria-hidden="true">→</span>
+          </a>
+
+          <a 
+            href="#personalizacion" 
+            class="w-full sm:w-auto border border-sand/80 bg-charcoal/30 backdrop-blur-sm text-ivory hover:bg-sand/20 hover:border-ivory py-3.5 sm:py-4 px-6 sm:px-8 text-xs uppercase tracking-[0.2em] font-medium transition-luxury min-h-[44px] flex items-center justify-center"
+            data-route="personalizacion"
+          >
+            Personaliza tu Pieza
+          </a>
+        </div>
+
       </div>
 
-      <h1 class="hero-fluid-title font-serif tracking-tight font-light">
-        Diseñado para <br class="hidden sm:inline" />
-        <span class="italic font-normal">ser único.</span>
-      </h1>
-
-      <p class="font-sans text-sm sm:text-base md:text-lg text-ivory/90 max-w-2xl mx-auto font-light leading-relaxed">
-        Cinco líneas oficiales creadas en cuero genuino con oficio artesanal. Consulta disponibilidad y cotiza directamente con nuestro taller a través de WhatsApp.
-      </p>
-
-      <!-- Botones de Acción -->
-      <div class="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-6 w-full max-w-xs sm:max-w-none mx-auto">
-        <a 
-          href="#vitrina" 
-          class="w-full sm:w-auto bg-warm-white text-charcoal hover:bg-ivory py-3.5 sm:py-4 px-6 sm:px-8 text-xs uppercase tracking-[0.2em] font-semibold transition-luxury flex items-center justify-center gap-3 shadow-lg min-h-[44px]"
+      <!-- Barra Interactiva de Pieza en Pantalla (Sincronizada con la foto del Hero) -->
+      <div class="relative z-10 w-full max-w-2xl mx-auto pt-4 sm:pt-6 pr-0 sm:pr-0">
+        <div 
+          id="hero-product-card"
+          class="bg-charcoal/80 backdrop-blur-md border border-sand/35 p-2.5 sm:p-3.5 shadow-2xl flex items-center justify-between gap-2.5 sm:gap-4 transition-all duration-300"
+          aria-live="polite"
         >
-          <span>Explorar Vitrina</span>
-          <span class="text-leather" aria-hidden="true">→</span>
-        </a>
+          <!-- Miniatura + Info de la pieza actual -->
+          <div 
+            id="hero-product-trigger"
+            role="button"
+            tabindex="0"
+            class="flex items-center gap-2.5 sm:gap-3.5 min-w-0 flex-1 cursor-pointer group text-left"
+            aria-label="Ver detalles de la pieza mostrada en portada"
+          >
+            <div class="w-11 h-11 sm:w-13 sm:h-13 bg-warm-white/95 border border-[#D4AF37]/50 flex-shrink-0 overflow-hidden p-1 flex items-center justify-center">
+              <img 
+                id="hero-product-thumb" 
+                src="fotos/Premium/botas-cuero-difuminado-miel-conac-suela-grupon.jpg" 
+                alt="Vista previa de pieza" 
+                class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2">
+                <span id="hero-product-line" class="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.2em] text-[#D4AF37] font-semibold truncate">
+                  Línea Premium
+                </span>
+                <span id="hero-product-counter" class="text-[9px] font-mono text-ivory/50">
+                  01 / 12
+                </span>
+              </div>
+              <p id="hero-product-name" class="font-serif text-sm sm:text-base text-ivory truncate group-hover:text-sand transition-colors">
+                Botas en Cuero Difuminado Miel Coñac — Suela Grupón
+              </p>
+              <span class="text-[10px] text-sand/80 group-hover:text-ivory inline-flex items-center gap-1 font-mono uppercase tracking-wider mt-0.5">
+                <span>Ver ficha de esta pieza</span>
+                <span aria-hidden="true">→</span>
+              </span>
+            </div>
+          </div>
 
-        <a 
-          href="#personalizacion" 
-          class="w-full sm:w-auto border border-sand/80 bg-charcoal/30 backdrop-blur-sm text-ivory hover:bg-sand/20 hover:border-ivory py-3.5 sm:py-4 px-6 sm:px-8 text-xs uppercase tracking-[0.2em] font-medium transition-luxury min-h-[44px] flex items-center justify-center"
-        >
-          Personaliza tu Pieza
-        </a>
+          <!-- Controles Anterior / Siguiente del Carrusel Hero -->
+          <div class="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+            <button 
+              type="button" 
+              id="hero-prev-btn"
+              class="w-9 h-9 sm:w-10 sm:h-10 border border-sand/30 bg-charcoal/60 text-ivory hover:bg-warm-white hover:text-charcoal transition-colors flex items-center justify-center cursor-pointer"
+              aria-label="Pieza anterior en portada"
+              title="Pieza anterior"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button 
+              type="button" 
+              id="hero-next-btn"
+              class="w-9 h-9 sm:w-10 sm:h-10 border border-sand/30 bg-charcoal/60 text-ivory hover:bg-warm-white hover:text-charcoal transition-colors flex items-center justify-center cursor-pointer"
+              aria-label="Siguiente pieza en portada"
+              title="Siguiente pieza"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Resumen de 4 Líneas en Inicio para Navegación Rápida -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 md:px-12 bg-ivory border-b border-sand/40">
+      <div class="max-w-7xl mx-auto space-y-10">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs uppercase tracking-[0.3em] font-mono text-leather block">Colecciones de Autor</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-charcoal">Cuatro Líneas de Oficio</h2>
+          <p class="text-xs sm:text-sm text-charcoal/70 font-light">Explora el catálogo organizado por especialidad y cotiza directamente con el maestro artesano.</p>
+        </div>
 
-    <!-- Indicador de Scroll -->
-    <div class="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10 text-ivory/60 text-[10px] tracking-[0.3em] uppercase flex flex-col items-center gap-2 pointer-events-none">
-      <span>Deslizar</span>
-      <span class="w-[1px] h-6 sm:h-8 bg-sand/50 animate-pulse"></span>
-    </div>
-  </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-warm-white border border-sand/60 p-6 flex flex-col justify-between hover-lift">
+            <div class="space-y-3">
+              <span class="px-2 py-0.5 bg-charcoal text-ivory text-[9px] font-mono uppercase tracking-[0.2em]">01</span>
+              <h3 class="font-serif text-2xl text-charcoal">Clásica</h3>
+              <p class="text-xs text-charcoal/70 font-light leading-relaxed">Calzado formal, Oxford, Derby y mocasines de vestir con pátina y lustrado artesanal.</p>
+            </div>
+            <a href="#vitrina" class="mt-6 text-xs uppercase tracking-[0.18em] font-semibold text-leather hover:text-charcoal inline-flex items-center gap-2" data-route="vitrina" data-filter="clasica">
+              <span>Ver Calzado Clásico (5)</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
 
+          <div class="bg-warm-white border border-sand/60 p-6 flex flex-col justify-between hover-lift">
+            <div class="space-y-3">
+              <span class="px-2 py-0.5 bg-charcoal text-ivory text-[9px] font-mono uppercase tracking-[0.2em]">02</span>
+              <h3 class="font-serif text-2xl text-charcoal">Sport</h3>
+              <p class="text-xs text-charcoal/70 font-light leading-relaxed">Sneakers y calzado casual de ciudad en cuero plena flor y gamuza con suelas ergonómicas.</p>
+            </div>
+            <a href="#vitrina" class="mt-6 text-xs uppercase tracking-[0.18em] font-semibold text-leather hover:text-charcoal inline-flex items-center gap-2" data-route="vitrina" data-filter="sport">
+              <span>Ver Línea Sport (7)</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="bg-warm-white border border-sand/60 p-6 flex flex-col justify-between hover-lift">
+            <div class="space-y-3">
+              <span class="px-2 py-0.5 bg-charcoal text-ivory text-[9px] font-mono uppercase tracking-[0.2em]">03</span>
+              <h3 class="font-serif text-2xl text-charcoal">Marroquinería</h3>
+              <p class="text-xs text-charcoal/70 font-light leading-relaxed">Billeteras bifold/trifold, tarjeteros ejecutivos y cinturones de gala y doble faz.</p>
+            </div>
+            <a href="#vitrina" class="mt-6 text-xs uppercase tracking-[0.18em] font-semibold text-leather hover:text-charcoal inline-flex items-center gap-2" data-route="vitrina" data-filter="marroquineria">
+              <span>Ver Marroquinería (23)</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="bg-warm-white border border-sand/60 p-6 flex flex-col justify-between hover-lift">
+            <div class="space-y-3">
+              <span class="px-2 py-0.5 bg-charcoal text-ivory text-[9px] font-mono uppercase tracking-[0.2em]">04</span>
+              <h3 class="font-serif text-2xl text-charcoal">Premium</h3>
+              <p class="text-xs text-charcoal/70 font-light leading-relaxed">Botas de autor, calzado de edición especial con suela en cuero grupón y teñido a mano.</p>
+            </div>
+            <a href="#vitrina" class="mt-6 text-xs uppercase tracking-[0.18em] font-semibold text-leather hover:text-charcoal inline-flex items-center gap-2" data-route="vitrina" data-filter="premium">
+              <span>Ver Colección Premium (11)</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- =========================================================================
-       4. VITRINA VIRTUAL / CATÁLOGO PARA COTIZACIÓN
+       2. VISTA: VITRINA / CATÁLOGO COMPLETO PAGINADO
        ========================================================================= -->
-  <section id="vitrina" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-warm-white">
+  <div id="view-vitrina" class="spa-view hidden-view">
+    <section id="vitrina" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12 bg-warm-white">
     <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
       
       <!-- Cabecera de Sección -->
@@ -253,7 +416,7 @@
         </p>
       </div>
 
-      <!-- Filtros por las 5 Líneas Oficiales (Tablist Deslizable en Móvil / Adaptativo) -->
+      <!-- Filtros por Líneas Oficiales Activas (Tablist Deslizable en Móvil / Adaptativo) -->
       <div role="tablist" aria-label="Filtrar catálogo por líneas de producto" class="flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs uppercase tracking-[0.15em] overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
         <button 
           type="button" 
@@ -291,17 +454,6 @@
         <button 
           type="button" 
           role="tab"
-          id="tab-line-deportiva"
-          aria-selected="false"
-          aria-controls="products-grid-container"
-          data-line="deportiva" 
-          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
-        >
-          Deportiva
-        </button>
-        <button 
-          type="button" 
-          role="tab"
           id="tab-line-marroquineria"
           aria-selected="false"
           aria-controls="products-grid-container"
@@ -309,17 +461,6 @@
           class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
         >
           Marroquinería
-        </button>
-        <button 
-          type="button" 
-          role="tab"
-          id="tab-line-institucional"
-          aria-selected="false"
-          aria-controls="products-grid-container"
-          data-line="institucional" 
-          class="line-filter-btn px-3.5 sm:px-4 py-2.5 min-h-[44px] border border-sand/60 bg-transparent text-charcoal/80 hover:border-leather transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
-        >
-          Institucional
         </button>
         <button 
           type="button" 
@@ -342,6 +483,11 @@
         <!-- Renderizado dinámicamente vía app.js -->
       </div>
 
+      <!-- Controles de Paginación del Catálogo -->
+      <div id="products-pagination-container" class="pt-6 pb-2 border-t border-sand/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <!-- Renderizado dinámicamente vía app.js -->
+      </div>
+
       <!-- Banner de Asesoría Directa -->
       <div class="p-6 sm:p-8 md:p-10 bg-ivory border border-sand/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
         <div>
@@ -349,7 +495,7 @@
           <p class="text-xs md:text-sm text-charcoal/70 mt-1.5 font-light">Podemos adaptar medidas, colores de cuero y herrajes a tu gusto exacto.</p>
         </div>
         <a 
-          href="https://wa.me/573000000000?text=Hola%20ELICER,%20me%20gustar%C3%ADa%20consultar%20sobre%20la%20adaptaci%C3%B3n%20a%20medida%20de%20una%20pieza." 
+          href="https://wa.me/15148858825?text=Hola%20ELICER,%20me%20gustar%C3%ADa%20consultar%20sobre%20la%20adaptaci%C3%B3n%20a%20medida%20de%20una%20pieza." 
           target="_blank"
           rel="noopener noreferrer"
           class="btn-whatsapp-primary px-7 py-4 text-xs uppercase tracking-[0.2em] font-semibold whitespace-nowrap inline-flex items-center justify-center gap-2.5 cursor-pointer shadow-md w-full sm:w-auto min-h-[44px]"
@@ -364,12 +510,13 @@
 
     </div>
   </section>
-
+  </div>
 
   <!-- =========================================================================
-       5. PERSONALIZACIÓN "HAZLO TUYO" — Sección Informativa
+       3. VISTA: PERSONALIZACIÓN "HAZLO TUYO"
        ========================================================================= -->
-  <section id="personalizacion" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-ivory border-t border-b border-sand/40">
+  <div id="view-personalizacion" class="spa-view hidden-view">
+  <section id="personalizacion" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12 bg-ivory">
     <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
 
       <!-- Cabecera -->
@@ -467,7 +614,7 @@
         </div>
         <div class="flex-shrink-0 w-full sm:w-auto">
           <a
-            href="https://wa.me/573000000000?text=Hola%20ELICER,%20quiero%20cotizar%20una%20*pieza%20personalizada*%20con%20las%20siguientes%20especificaciones:%0A%0A*Tipo%20de%20pieza:*%20%0A*Color%20de%20cuero:*%20%0A*Herrajes:*%20%0A*Grabado%20%2F%20Monograma:*%20%0A*Otras%20notas:*%20"
+            href="https://wa.me/15148858825?text=Hola%20ELICER,%20quiero%20cotizar%20una%20*pieza%20personalizada*%20con%20las%20siguientes%20especificaciones:%0A%0A*Tipo%20de%20pieza:*%20%0A*Color%20de%20cuero:*%20%0A*Herrajes:*%20%0A*Grabado%20%2F%20Monograma:*%20%0A*Otras%20notas:*%20"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-whatsapp-primary py-4 px-6 sm:px-7 text-xs uppercase tracking-[0.2em] font-semibold inline-flex items-center justify-center gap-3 shadow-lg group whitespace-nowrap w-full sm:w-auto min-h-[44px]"
@@ -483,12 +630,13 @@
 
     </div>
   </section>
-
+  </div>
 
   <!-- =========================================================================
-       6. SECCIÓN DESTACADA: VENTAS AL POR MAYOR & LÍNEA INSTITUCIONAL (B2B)
+       4. VISTA: VENTAS AL POR MAYOR & LÍNEA INSTITUCIONAL (B2B)
        ========================================================================= -->
-  <section id="mayoristas" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-warm-white border-b border-sand/40">
+  <div id="view-mayoristas" class="spa-view hidden-view">
+  <section id="mayoristas" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12 bg-warm-white">
     <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -525,7 +673,7 @@
           <!-- Opciones de Consulta Mayorista -->
           <div class="pt-4 flex flex-col sm:flex-row gap-3">
             <a 
-              href="https://wa.me/573000000000?text=Hola%20ELICER,%20deseo%20solicitar%20cotizaci%C3%B3n%20para%20*Regalos%20Corporativos*%20o%20*L%C3%ADnea%20Institucional*%20personalizada%20con%20logotipo." 
+              href="https://wa.me/15148858825?text=Hola%20ELICER,%20deseo%20solicitar%20cotizaci%C3%B3n%20para%20*Regalos%20Corporativos*%20o%20*L%C3%ADnea%20Institucional*%20personalizada%20con%20logotipo." 
               target="_blank"
               rel="noopener noreferrer"
               class="btn-whatsapp-primary px-6 py-3.5 text-xs uppercase tracking-[0.18em] font-semibold transition-luxury inline-flex items-center justify-center gap-2.5 shadow-md w-full sm:w-auto min-h-[44px]"
@@ -537,7 +685,7 @@
               <span aria-hidden="true">→</span>
             </a>
             <a 
-              href="https://wa.me/573000000000?text=Hola%20ELICER,%20deseo%20solicitar%20el%20*Cat%C3%A1logo%20Mayorista*%20para%20distribuci%C3%B3n." 
+              href="https://wa.me/15148858825?text=Hola%20ELICER,%20deseo%20solicitar%20el%20*Cat%C3%A1logo%20Mayorista*%20para%20distribuci%C3%B3n." 
               target="_blank"
               rel="noopener noreferrer"
               class="border border-charcoal bg-warm-white text-charcoal hover:bg-charcoal hover:text-ivory px-6 py-3.5 text-xs uppercase tracking-[0.18em] font-semibold transition-luxury inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px]"
@@ -568,10 +716,10 @@
           </div>
 
           <div class="p-5 sm:p-6 bg-ivory border border-sand/50 space-y-2 sm:space-y-3">
-            <span class="font-mono text-[10px] uppercase text-leather font-semibold tracking-wider">Línea Deportiva & Clubes</span>
+            <span class="font-mono text-[10px] uppercase text-leather font-semibold tracking-wider">Clubes & Eventos</span>
             <h3 class="font-serif text-xl text-charcoal">Torneos & Miembros de Club</h3>
             <p class="text-xs text-charcoal/70 font-light leading-relaxed">
-              Duffles de viaje, fundas de raquetas/pádel y accesorios personalizados con el escudo oficial del club.
+              Estuches de vino, bolsos de viaje, cinturones y accesorios personalizados con el escudo oficial del club.
             </p>
           </div>
 
@@ -589,12 +737,13 @@
 
     </div>
   </section>
-
+  </div>
 
   <!-- =========================================================================
-       7. HISTORIA EDITORIAL: COLOMBIA + CANADÁ
+       5. VISTA: HISTORIA EDITORIAL: COLOMBIA + CANADÁ
        ========================================================================= -->
-  <section id="historia" class="py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-espresso text-ivory relative overflow-hidden">
+  <div id="view-historia" class="spa-view hidden-view">
+  <section id="historia" class="py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-12 bg-espresso text-ivory relative overflow-hidden">
     
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
       
@@ -633,7 +782,7 @@
 
         <div>
           <a 
-            href="https://wa.me/573000000000?text=Hola%20ELICER,%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20historia%20y%20proceso%20artesanal." 
+            href="https://wa.me/15148858825?text=Hola%20ELICER,%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20historia%20y%20proceso%20artesanal." 
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-medium text-sand hover:text-ivory transition-colors group min-h-[44px]"
@@ -649,8 +798,8 @@
         <div class="space-y-3 sm:space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-charcoal">
             <img 
-              src="fotos/Premium/Gemini_Generated_Image_azsaxvazsaxvazsa.jpg" 
-              alt="Artesanía y corte manual de cuero" 
+              src="fotos/Premium/cuero-crosta-miel-conac-difuminado.jpg" 
+              alt="Zapatería artesanal y pátina en cuero crosta" 
               class="w-full h-full object-cover filter contrast-105 hover:scale-105 transition-all duration-700"
               loading="lazy"
             />
@@ -668,8 +817,8 @@
           </div>
           <div class="aspect-[3/4] overflow-hidden bg-charcoal">
             <img 
-              src="fotos/deportiva/Gemini_Generated_Image_f2o81cf2o81cf2o8.jpg" 
-              alt="Detalle de herrajes y acabados en cuero" 
+              src="fotos/Marroquineria/set-accesorios-artesanal.webp" 
+              alt="Detalle de herrajes y marroquinería artesanal en cuero" 
               class="w-full h-full object-cover filter contrast-105 hover:scale-105 transition-all duration-700"
               loading="lazy"
             />
@@ -680,8 +829,7 @@
     </div>
 
   </section>
-
-
+  </div>
 
   </main>
 
@@ -693,16 +841,16 @@
     role="dialog" 
     aria-modal="true" 
     aria-labelledby="modal-product-title" 
-    class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 md:p-10 modal-backdrop overflow-y-auto"
+    class="fixed inset-0 z-50 hidden flex items-center justify-center p-2 sm:p-6 md:p-10 modal-backdrop overflow-y-auto"
   >
-    <div class="relative w-full max-w-4xl bg-warm-white border border-sand shadow-2xl p-4 sm:p-8 md:p-10 max-h-[92dvh] overflow-y-auto overscroll-contain">
+    <div class="relative w-full max-w-4xl bg-warm-white border border-sand shadow-2xl p-4 sm:p-8 md:p-10 max-h-[92dvh] overflow-y-auto overscroll-contain rounded-sm">
       
-      <!-- Botón Cerrar Accesible -->
+      <!-- Botón Cerrar Accesible con Target Táctil Grande en Móvil -->
       <button 
         type="button" 
         id="modal-close-btn"
         onclick="closeProductModal()" 
-        class="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 text-charcoal hover:text-leather hover:bg-sand/30 transition-colors z-10 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+        class="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 text-charcoal hover:text-leather hover:bg-sand/30 bg-warm-white/90 backdrop-blur-sm rounded-full sm:rounded-none transition-colors z-20 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer shadow-sm sm:shadow-none"
         aria-label="Cerrar detalle del producto"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -738,7 +886,7 @@
           </div>
           <p class="font-serif italic text-sand text-base sm:text-lg pt-1">Tu historia. En cada detalle.</p>
           <p class="text-xs text-ivory/85 font-light max-w-sm leading-relaxed">
-            Marroquinería contemporánea en 5 líneas de oficio: Sport, Deportiva, Marroquinería, Institucional y Premium. Conexión de diseño y taller entre Colombia y Canadá.
+            Calzado de autor y marroquinería contemporánea en cuero legítimo: líneas Clásica, Sport, Marroquinería y Premium. Conexión de diseño y taller entre Colombia y Canadá.
           </p>
         </div>
 
@@ -746,11 +894,11 @@
         <div class="md:col-span-3 space-y-3">
           <p class="text-xs uppercase tracking-[0.2em] text-sand font-mono">Navegación</p>
           <ul class="space-y-2 text-xs text-ivory/90">
-            <li><a href="#hero" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Inicio</a></li>
-            <li><a href="#vitrina" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Vitrina Virtual</a></li>
-            <li><a href="#personalizacion" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Personalización</a></li>
-            <li><a href="#mayoristas" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Mayoristas</a></li>
-            <li><a href="#historia" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center">Colombia + Canadá</a></li>
+            <li><a href="#inicio" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center" data-route="inicio">Inicio</a></li>
+            <li><a href="#vitrina" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center" data-route="vitrina">Catálogo de Piezas</a></li>
+            <li><a href="#personalizacion" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center" data-route="personalizacion">Personalización</a></li>
+            <li><a href="#mayoristas" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center" data-route="mayoristas">Ventas al por Mayor</a></li>
+            <li><a href="#historia" class="hover:text-sand transition-colors py-1 inline-block touch-target-min flex items-center" data-route="historia">Colombia + Canadá</a></li>
           </ul>
         </div>
 
@@ -761,12 +909,12 @@
             Canal directo de taller para cotizaciones individuales y pedidos mayoristas:
           </p>
           <a 
-            href="https://wa.me/573000000000?text=Hola%20ELICER,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." 
+            href="https://wa.me/15148858825?text=Hola%20ELICER,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." 
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors py-1.5 min-h-[44px] break-all sm:break-normal"
           >
-            <span>WhatsApp: +57 300 000 0000</span>
+            <span>WhatsApp: +1 (514) 885-8825</span>
             <span aria-hidden="true">→</span>
           </a>
           <p class="text-[11px] text-ivory/75 font-mono">Envíos a toda Colombia, Canadá y América.</p>
@@ -776,7 +924,7 @@
 
       <div class="pt-8 border-t border-sand/20 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/75 font-mono gap-3 text-center sm:text-left">
         <p>© 2026 ELICER • Jorge Eliecer Gómez. Todos los derechos reservados.</p>
-        <p>Sport • Deportiva • Marroquinería • Institucional • Premium</p>
+        <p>Clásica • Sport • Marroquinería • Premium</p>
       </div>
 
     </div>
@@ -788,7 +936,7 @@
   <aside id="floating-whatsapp-wrapper" class="fixed bottom-6 right-6 z-50 floating-whatsapp-container">
     <a 
       id="floating-concierge"
-      href="https://wa.me/573000000000?text=Hola%20ELICER,%20quisiera%20solicitar%20asesor%C3%ADa%20y%20cotizaci%C3%B3n%20para%20piezas%20en%20cuero."
+      href="https://wa.me/15148858825?text=Hola%20ELICER,%20quisiera%20solicitar%20asesor%C3%ADa%20y%20cotizaci%C3%B3n%20para%20piezas%20en%20cuero."
       target="_blank"
       rel="noopener noreferrer"
       class="floating-whatsapp-circle"
@@ -803,8 +951,7 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="js/products.js?v=7"></script>
-  <script src="js/customizer.js?v=6"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/products.js?v=11"></script>
+  <script src="js/app.js?v=11"></script>
 </body>
 </html>

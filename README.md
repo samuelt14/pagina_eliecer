@@ -1,7 +1,7 @@
-# ELICER — Marroquinería Contemporánea & Líneas de Oficio
+# ELICER — Calzado & Marroquinería Artesanal en Cuero Genuino
 > **Maestro Artesano Jorge Eliecer Gómez** | *Colombia • Canadá*
 
-Plataforma web premium, catálogo interactivo y vitrina digital para la marca de marroquinería artesanal **ELICER**. El proyecto fusiona la tradición del trabajo en cuero genuino de alta gama con una experiencia digital contemporánea, interactiva, fluida y completamente responsiva.
+Plataforma web editorial, catálogo interactivo y vitrina digital para la casa de calzado y marroquinería artesanal **ELICER**. El proyecto fusiona la tradición del trabajo en cuero genuino de alta gama con una experiencia digital contemporánea, accesible, fluida y completamente responsiva.
 
 ---
 
@@ -20,26 +20,20 @@ Plataforma web premium, catálogo interactivo y vitrina digital para la marca de
 
 ## ✨ Características Principales
 
-- **Catálogo de 5 Líneas de Oficio:**
-  - **Sport:** Accesorios versátiles, dinámicos y ergonómicos para el día a día.
-  - **Deportiva:** Equipamiento y bolsos robustos diseñados con resistencia de alto rendimiento.
-  - **Marroquinería:** Billeteras, tarjeteros, cinturones y piezas clásicas cosidas a detalle.
-  - **Institucional:** Dotación corporativa exclusiva, carpetas y regalos de negocios en cuero legítimo.
-  - **Premium:** Piezas maestras de edición limitada, acabados con pátinas manuales y herrajes selectos.
-- **Personalizador de Piezas en Tiempo Real (`js/customizer.js`):**
-  - Selección dinámica de tipos de cuero y tonalidades artesanales (Café Moro, Habana, Suela, Negro Azabache).
-  - Elección de herrajes (Bronce antiguo, Níquel satinado, Dorado mate).
-  - Grabado de monogramas / iniciales personalizado con cálculo estimado de cotización en vivo.
-- **Motion Design y Microinteracciones avanzadas (GSAP):**
-  - Entradas escalonadas (*stagger*), revelado de textos, scroll parallax suave y transiciones de tarjetas.
-  - Microinteracciones de hover háptico visual y elevación con feedback inmediato.
-  - Soporte nativo para accesibilidad de movimiento (`prefers-reduced-motion`).
-- **Navegación Móvil Refinada (Drawer UI/UX):**
-  - Menú lateral deslizante con desenfoque de fondo (*backdrop blur*), control de foco accesible (`aria-expanded`, tecla `Escape`), prevención de scroll de fondo y targets táctiles optimizados (mínimo 44px).
-- **Integración con WhatsApp Concierge:**
-  - Generador automatizado de enlaces a WhatsApp que preformatea los datos de cotización (línea, producto, personalización seleccionada) para atención directa de taller.
-- **Botón Flotante de Contacto:**
-  - Botón minimalista de WhatsApp fijado en la esquina inferior derecha con tooltip descriptivo y elevación suave al interactuar.
+- **Catálogo de 4 Líneas de Oficio (46 Piezas Reales):**
+  - **Clásica (5 piezas):** Calzado formal, Oxford, Derby y mocasines de vestir cosidos a mano con pátina artesanal.
+  - **Sport (7 piezas):** Sneakers y calzado casual urbano en cuero plena flor, nobuck y gamuza con suelas ergonómicas.
+  - **Marroquinería (23 piezas):** Billeteras bifold/trifold, tarjeteros slim y cinturones de gala y doble faz en cuero legítimo.
+  - **Premium (11 piezas):** Botas de autor, calzado de edición especial con pátina manual y suela en cuero grupón.
+- **Vitrina Interactiva & Modal de Inspección Boutique:**
+  - Filtrado dinámico con conteo de piezas por línea y cambio de identidad gráfica (isotipo y subtítulo de línea).
+  - Buscador en tiempo real con normalización de acentos (`NFD`) por nombre, código de referencia, material o descripción.
+  - Modal de detalle con galería multi-ángulo, lupa de zoom dinámico (mouse y pinch-to-zoom táctil), ficha técnica completa y campo de notas de personalización (talla, color, iniciales).
+- **Navegación Móvil Refinada & Accesibilidad WCAG 2.2 AA:**
+  - Enlace de salto al contenido principal (`skip-link`), trampa de foco (`focus trap`) en diálogos y soporte completo de teclado (`Escape`, `Tab`).
+  - Respeto estricto a `prefers-reduced-motion` y áreas seguras (`safe-area-inset`) en dispositivos móviles.
+- **Integración con WhatsApp Concierge (`+1 (514) 885-8825`):**
+  - Generador automatizado de enlaces a WhatsApp que estructura la consulta con nombre de la pieza, código de referencia (`REF`), línea y notas de personalización.
 
 ---
 
@@ -48,38 +42,37 @@ Plataforma web premium, catálogo interactivo y vitrina digital para la marca de
 ```text
 Pagina Eliecer/
 ├── css/
-│   └── styles.css            # Estilos personalizados, animaciones CSS, utilities y variables
-├── fotos/                    # Recursos fotográficos oficiales del taller
-│   ├── Deportiva/            # Fotografías de la línea deportiva
-│   ├── Institucional/        # Piezas corporativas e institucionales
-│   ├── Logos/                # Emblemas oficiales e isotipos de marca
-│   ├── Marroquineria/        # Fotografías de marroquinería tradicional
-│   ├── Premium/              # Fotografías de piezas maestras de colección
-│   └── Sport/                # Fotografías de la línea sport
+│   └── styles.css            # Estilos editoriales, variables CSS, animaciones y utilidades responsivas
+├── fotos/                    # Recursos fotográficos optimizados del taller
+│   ├── Clasica/              # Calzado formal y mocasines clásicos
+│   ├── Deportiva/            # Reservado para futura línea deportiva
+│   ├── Institucional/        # Reservado para futura línea institucional
+│   ├── Logos/                # Emblemas oficiales por línea (SVG y WebP)
+│   ├── Marroquineria/        # Billeteras, cinturones y accesorios en cuero
+│   ├── Premium/              # Botas y piezas maestras de colección
+│   └── sport/                # Calzado casual y sneakers de cuero
 ├── js/
-│   ├── app.js                # Lógica global, animaciones GSAP, menú móvil, header dinámico
-│   ├── customizer.js         # Motor interactivo de personalización de productos y cotizaciones
-│   └── products.js           # Base de datos local de productos, filtrado y renderizado dinámico
-├── .gitignore                # Reglas de exclusión para Git (Node, Python, SO, editores)
-├── index.html                # Estructura semántica HTML5, metadatos SEO, Open Graph y Tailwind
-├── package.json              # Metadatos del proyecto
-├── README.md                 # Documentación completa del proyecto
-└── server.py                 # Servidor HTTP seguro en Python con rate limiting y cabeceras estrictas
+│   ├── app.js                # Lógica de interfaz, filtros, buscador, modal, zoom y accesibilidad
+│   └── products.js           # Catálogo de 46 piezas, configuración de líneas y generador de WhatsApp
+├── .gitignore                # Reglas de exclusión para Git
+├── index.html                # Estructura semántica HTML5, SEO, Open Graph, JSON-LD y Tailwind CSS
+├── package.json              # Metadatos del proyecto y script de inicio
+├── README.md                 # Documentación del proyecto
+└── server.py                 # Servidor HTTP seguro en Python con lista blanca de extensiones, CSP y rate limiting
 ```
 
 ---
 
 ## 🛠 Stack Tecnológico
 
-- **Maquetación & Semántica:** HTML5 semántico con estándares WAI-ARIA para accesibilidad.
-- **Estilos & Diseño:** [Tailwind CSS](https://tailwindcss.com/) complementado con CSS moderno (`css/styles.css`).
+- **Maquetación & Semántica:** HTML5 semántico con atributos WAI-ARIA y datos estructurados Schema.org (`Brand`).
+- **Estilos & Diseño:** [Tailwind CSS](https://tailwindcss.com/) + hoja de estilos editorial (`css/styles.css`).
 - **Paleta de Identidad:**
-  - Marfil (`#F4F0E8`), Blanco Cálido (`#FAF8F4`), Carbón Profundo (`#1C1B19`), Espresso (`#352820`), Cuero Legítimo (`#8A6347`), Arena (`#D8C8B5`) y Acentos Oro Artesanal (`#D4AF37`).
+  - Marfil (`#F4F0E8`), Blanco Cálido (`#FAF8F4`), Carbón Profundo (`#1C1B19`), Espresso (`#352820`), Cuero Legítimo (`#8A6347`) y Arena (`#D8C8B5`).
 - **Tipografías:**
   - *Serif:* `Cormorant Garamond` (Elegancia artesanal clásica).
   - *Sans:* `Manrope` (Claridad técnica contemporánea).
-- **Animaciones & Motion:** [GSAP 3](https://greensock.com/gsap/) con ScrollTrigger para secuencias y revelados progresivos.
-- **Servidor Local:** Python 3 (`http.server` multi-hilo con arquitectura de seguridad personalizada).
+- **Servidor Local:** Python 3 (`http.server` multihilo con cabeceras de seguridad y protección contra Path Traversal).
 
 ---
 
@@ -87,72 +80,57 @@ Pagina Eliecer/
 
 ### Opción 1: Servidor Seguro en Python (Recomendado)
 
-El proyecto incluye `server.py`, configurado con cabeceras de seguridad CSP y limitador de peticiones para emular un entorno de producción seguro:
-
 1. Asegúrate de tener instalado **Python 3.8+**.
-2. Abre una terminal en la raíz del proyecto:
-   ```bash
-   cd "Pagina Eliecer"
-   ```
-3. Inicia el servidor:
+2. Abre una terminal en la raíz del proyecto e inicia el servidor:
    ```bash
    python server.py
    ```
-4. Abre tu navegador en:
+3. Abre tu navegador en:
    ```text
    http://localhost:8000
    ```
 
-### Opción 2: Abrir Directamente en el Navegador
+### Opción 2: Servidor Estático Convencional
 
-Puedes abrir directamente el archivo `index.html` con cualquier navegador moderno o utilizando extensiones como *Live Server* en Visual Studio Code.
+Puedes servir la carpeta raíz con cualquier servidor estático (`npx serve`, *Live Server* en VS Code, Nginx, Netlify, Vercel, Cloudflare Pages o GitHub Pages).
 
 ---
 
 ## 🧩 Módulos y Arquitectura Frontend
 
 ### 1. `js/products.js`
-Almacena el catálogo de productos por categorías (`sport`, `deportiva`, `marroquineria`, `institucional`, `premium`), gestiona los filtros de vitrina y renderiza las tarjetas con sus detalles de material y acabados.
+Contiene la configuración central (`WHATSAPP_PHONE`, `LINE_LOGOS`, `LINE_BRANDING`), el catálogo `PRODUCTS_DATA` con las 46 piezas documentadas y las funciones `buildWhatsAppUrl()` y `buildGeneralWhatsAppUrl()`.
 
-### 2. `js/customizer.js`
-Controla el personalizador artesanal:
-- Escucha los cambios de acabados, cuero y herrajes.
-- Actualiza el visor visual y recalcula el valor sugerido.
-- Genera el enlace dinámico a WhatsApp (`wa.me`) con el desglose exacto de la pieza configurada.
-
-### 3. `js/app.js`
-Coordina la experiencia de usuario general:
-- Manejo del menú drawer en dispositivos móviles con gestión de foco accesible y bloqueo de scroll.
-- Efecto de transparencia a estado sólido del navbar según el desplazamiento vertical.
-- Inicialización de animaciones fluidas con GSAP (respetando `prefers-reduced-motion`).
-- Desplazamiento suave (*smooth scroll*) para anclas de navegación interna.
+### 2. `js/app.js`
+Coordina la experiencia de usuario:
+- Renderizado de tarjetas del catálogo, filtrado por línea con contador dinámico y búsqueda instantánea.
+- Modal de detalle de producto con renderizado dinámico de especificaciones (`renderProductSpecsHTML`), galería multi-imagen sin pérdida de estado y zoom interactivo (`initModalImageZoom`).
+- Control del menú móvil, cabecera dinámica en scroll y gestión de foco accesible.
 
 ---
 
 ## 🛡 Seguridad y Rendimiento
 
-- **Content Security Policy (CSP):** Políticas restrictivas para carga de scripts, fuentes seguras y assets multimedia.
-- **Anti-Clickjacking:** Cabecera `X-Frame-Options: DENY` para mitigar incrustaciones en marcos no autorizados.
-- **MIME Protection:** `X-Content-Type-Options: nosniff` activo para prevenir ataques de confusión de tipos MIME.
-- **Rate Limiting:** `server.py` implementa control de concurrencia limitando peticiones por IP (máximo 120 peticiones/minuto) para mitigar saturaciones accidentales o abusos.
-- **Rendimiento de Imágenes:** Atributos `loading="lazy"` y `decoding="async"` para optimizar el First Contentful Paint (FCP).
+- **Lista Blanca de Extensiones (`ALLOWED_EXTENSIONS`):** `server.py` sirve únicamente recursos web estáticos autorizados, impidiendo la descarga de scripts del servidor o archivos de configuración.
+- **Content Security Policy (CSP) & Cabeceras HTTP:** Políticas estrictas `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY` y `Referrer-Policy`.
+- **Rate Limiting:** Control de hasta 120 solicitudes por minuto por IP en `server.py`.
+- **Optimización Fotográfica:** Fotografías de catálogo normalizadas en nombres ASCII (`kebab-case`) y optimizadas a máximo `1400px` para carga rápida (`loading="lazy"`, `decoding="async"`).
 
 ---
 
 ## ⚙️ Personalización y Configuración
 
 - **Número de WhatsApp Oficial:**
-  Para actualizar el número de atención directa, edita los enlaces con prefijo `https://wa.me/573000000000` en `index.html`, `js/app.js` y `js/customizer.js`.
+  Configurado en `+1 (514) 885-8825` (`WHATSAPP_PHONE = "15148858825"` en `js/products.js` y enlaces directos en `index.html`).
 - **Nuevos Productos o Fotografías:**
-  Agrega las imágenes correspondientes en la subcarpeta respectiva dentro de `fotos/` y declara la nueva pieza en la lista de `products.js`.
+  Agrega las imágenes optimizadas en la subcarpeta correspondiente dentro de `fotos/` y registra el objeto del producto en `PRODUCTS_DATA` dentro de `js/products.js`.
 
 ---
 
 ## ✒️ Créditos
 
-- **Concepto y Artesanía:** Jorge Eliecer Gómez — Maestro Marroquinero.
+- **Concepto y Artesanía:** Jorge Eliecer Gómez — Maestro de Calzado y Marroquinería.
 - **Marca:** ELICER (Colombia • Canadá).
-- **Desarrollo Web & Motion Design:** Experiencia interactiva desarrollada con estándares modernos de UI/UX y rendimiento web.
 
 ---
-*© 2026 ELICER. Todos los derechos reservados.*
+*© 2026 ELICER — Jorge Eliecer Gómez. Todos los derechos reservados.*

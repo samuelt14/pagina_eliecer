@@ -1,12 +1,20 @@
 {
-  "name": "pagina-eliecer",
+  "name": "elicer-web",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "ELICER — Calzado & Marroquinería Artesanal en Cuero Genuino | Jorge Eliecer Gómez (Colombia • Canadá)",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "python server.py"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": [
+    "elicer",
+    "calzado-artesanal",
+    "marroquineria",
+    "cuero-genuino",
+    "colombia",
+    "canada"
+  ],
+  "author": "Jorge Eliecer Gómez — ELICER",
+  "license": "UNLICENSED",
+  "private": true
 }

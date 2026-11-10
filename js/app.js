@@ -43,6 +43,8 @@ function initNavbarScroll() {
 // 2. Filtros por Líneas de Producto (5 Líneas Oficiales con sincronización ARIA)
 function initLineFilters() {
   const filterButtons = document.querySelectorAll(".line-filter-btn");
+  const gridContainer = document.getElementById("products-grid-container");
+
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       filterButtons.forEach(b => {
@@ -54,6 +56,10 @@ function initLineFilters() {
       btn.classList.add("border-charcoal", "bg-charcoal", "text-ivory");
       btn.classList.remove("border-sand/60", "bg-transparent", "text-charcoal/80");
       btn.setAttribute("aria-selected", "true");
+
+      if (gridContainer && btn.id) {
+        gridContainer.setAttribute("aria-labelledby", btn.id);
+      }
 
       activeLine = btn.dataset.line;
       updateActiveLineBranding(activeLine);
@@ -217,36 +223,36 @@ function renderProductGrid() {
     return `
       <article class="product-card group flex flex-col justify-between overflow-hidden">
         
-        <!-- Fotografía Editorial con Acceso Rápido y Navegación por Teclado -->
+        <!-- Fotografía Studio Estilo Bosi con Acceso Rápido -->
         <div 
-          class="relative aspect-[3/4] w-full overflow-hidden bg-sand/15 cursor-pointer" 
+          class="relative w-full aspect-[3/4] overflow-hidden bg-[#F6F4F0] p-3 sm:p-4 flex items-center justify-center cursor-pointer group-hover:bg-[#F2EFE8] transition-colors" 
           onclick="openProductModal('${product.id}')"
           role="button"
           tabindex="0"
           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProductModal('${product.id}');}"
-          aria-label="Abrir detalle de ${escapedName}"
+          aria-label="Abrir ficha y ver detalle de ${escapedName}"
         >
           <img 
             src="${product.image}" 
             alt="${escapedName}" 
-            class="product-card-img w-full h-full object-cover object-center"
+            class="product-card-img w-full h-full object-contain p-2 mx-auto block drop-shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
           
           <!-- Badge de Línea Oficial -->
-          <div class="absolute top-4 left-4">
-            <span class="bg-ivory/95 backdrop-blur-sm text-charcoal px-3 py-1 text-[10px] tracking-[0.2em] uppercase font-mono border border-sand/50 shadow-sm font-semibold">
+          <div class="absolute top-3 left-3 sm:top-4 sm:left-4">
+            <span class="bg-ivory/95 backdrop-blur-sm text-charcoal px-2.5 sm:px-3 py-1 text-[10px] tracking-[0.18em] uppercase font-mono border border-sand/50 shadow-sm font-semibold">
               ${escapedLineName}
             </span>
           </div>
 
-          <!-- Overlay con CTA Editorial -->
-          <div class="absolute inset-0 bg-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <!-- Overlay con CTA Editorial (decorativo para ratón, no interrumpe el orden de tabulación) -->
+          <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6" aria-hidden="true">
             <button 
               type="button"
+              tabindex="-1"
               onclick="event.stopPropagation(); openProductModal('${product.id}')"
               class="w-full bg-warm-white/95 text-charcoal py-3 px-4 text-xs uppercase tracking-[0.15em] font-semibold hover:bg-charcoal hover:text-ivory transition-colors duration-200 shadow-md min-h-[42px] flex items-center justify-center cursor-pointer"
-              aria-label="Ver ficha de taller de ${escapedName}"
             >
               Ver Ficha de Taller →
             </button>
@@ -256,7 +262,7 @@ function renderProductGrid() {
         <!-- Información de la Pieza -->
         <div class="p-5 sm:p-6 md:p-7 flex flex-col flex-grow justify-between border-t border-sand/30">
           <div>
-            <div class="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-charcoal/70 font-mono mb-2">
+            <div class="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-charcoal/80 font-mono mb-2">
               <span class="text-leather font-semibold">${escapedLineName}</span>
               <span>REF: ${escapedRef}</span>
             </div>
@@ -264,22 +270,19 @@ function renderProductGrid() {
             <h3 
               class="font-serif text-xl sm:text-2xl text-charcoal group-hover:text-leather transition-colors duration-200 cursor-pointer font-medium leading-tight"
               onclick="openProductModal('${product.id}')"
-              role="button"
-              tabindex="0"
-              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProductModal('${product.id}');}"
-              aria-label="Ver ficha de ${escapedName}"
+              title="Ver ficha de ${escapedName}"
             >
               ${escapedName}
             </h3>
 
-            <p class="text-xs text-charcoal/75 mt-2 font-light line-clamp-2 leading-relaxed">
+            <p class="text-xs text-charcoal/85 mt-2 font-light line-clamp-2 leading-relaxed">
               ${escapedTagline}
             </p>
 
             <!-- Características Rápidas -->
             <div class="mt-4 flex flex-wrap gap-1.5" aria-label="Características destacadas">
               ${product.features ? product.features.map(f => `
-                <span class="text-[10px] bg-sand/25 text-charcoal/85 px-2 py-0.5 border border-sand/40 font-mono">
+                <span class="text-[10px] bg-sand/35 text-charcoal px-2 py-0.5 border border-sand/60 font-mono font-medium">
                   ${escapeHTML(f)}
                 </span>
               `).join('') : ''}
@@ -360,6 +363,7 @@ function openProductModal(productId) {
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  document.body.classList.add("modal-open");
 
   // Mover el foco al botón de cerrar para navegación por teclado
   const closeBtn = document.getElementById("modal-close-btn");
@@ -371,11 +375,13 @@ function openProductModal(productId) {
 }
 
 function closeProductModal() {
+  resetModalImageZoom();
   const modal = document.getElementById("product-detail-modal");
   if (modal) {
     modal.classList.add("hidden");
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    document.body.classList.remove("modal-open");
   }
 
   // Devolver el foco al elemento que activó el modal (WCAG 2.4.3)
@@ -396,19 +402,44 @@ function renderModalContent(product) {
   modalContent.innerHTML = `
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
       
-      <!-- Columna Izquierda: Galería Editorial -->
+      <!-- Columna Izquierda: Galería Editorial con Inspección Zoom -->
       <div class="lg:col-span-6 space-y-3 sm:space-y-4">
-        <div class="relative aspect-[4/5] bg-sand/20 overflow-hidden">
+        <div 
+          id="modal-image-zoom-box" 
+          class="relative w-full aspect-[3/4] bg-[#F6F4F0] overflow-hidden flex items-center justify-center p-4 sm:p-6 group select-none"
+          onmousemove="handleModalImageZoom(event)"
+          onmouseleave="resetModalImageZoom()"
+          onclick="toggleModalTouchZoom(event)"
+          ontouchmove="handleModalTouchZoom(event)"
+          role="region"
+          aria-label="Fotografía ampliable de ${escapedName}"
+        >
           <img 
             id="modal-main-image" 
             src="${product.gallery[activeModalImageIndex] || product.image}" 
             alt="${escapedName}" 
-            class="w-full h-full object-cover object-center transition-all duration-500"
+            class="w-full h-full object-contain p-2 mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.1)] pointer-events-none"
           />
-          <div class="absolute top-3 left-3 sm:top-4 sm:left-4">
-            <span class="bg-charcoal text-ivory text-[10px] tracking-[0.2em] uppercase px-2.5 sm:px-3 py-1 font-mono font-medium">
+          
+          <!-- Badge de Línea Oficial -->
+          <div class="absolute top-3 left-3 sm:top-4 sm:left-4 pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-40">
+            <span class="bg-charcoal text-ivory text-[10px] tracking-[0.2em] uppercase px-2.5 sm:px-3 py-1 font-mono font-medium shadow-sm">
               ${escapedLineName}
             </span>
+          </div>
+
+          <!-- Indicador Sutil de Lupa para el Usuario -->
+          <div 
+            id="modal-zoom-badge"
+            class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 pointer-events-none z-10 bg-ivory/95 backdrop-blur-sm border border-sand/60 px-2.5 py-1 text-[10px] font-mono text-charcoal/80 flex items-center gap-1.5 shadow-sm transition-opacity duration-300 group-hover:opacity-0"
+          >
+            <svg class="w-3.5 h-3.5 text-leather flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span>Pasa el cursor o pulsa para ampliar</span>
           </div>
         </div>
 
@@ -420,9 +451,9 @@ function renderModalContent(product) {
               onclick="switchModalImage(${i})" 
               aria-label="Ver fotografía ${i + 1} de ${product.gallery.length} de ${escapedName}"
               aria-pressed="${i === activeModalImageIndex ? 'true' : 'false'}"
-              class="aspect-square bg-sand/20 overflow-hidden border-2 transition-all duration-200 cursor-pointer min-h-[44px] ${i === activeModalImageIndex ? 'border-charcoal opacity-100 ring-2 ring-leather/40' : 'border-transparent opacity-60 hover:opacity-90'}"
+              class="aspect-square bg-sand/20 overflow-hidden border-2 transition-all duration-200 cursor-pointer min-h-[44px] p-1 flex items-center justify-center ${i === activeModalImageIndex ? 'border-charcoal opacity-100 ring-2 ring-leather/40' : 'border-transparent opacity-60 hover:opacity-90'}"
             >
-              <img src="${img}" alt="Vista ${i + 1}" class="w-full h-full object-cover"/>
+              <img src="${img}" alt="Vista en miniatura ${i + 1} de ${escapedName}" class="max-w-full max-h-full w-auto h-auto object-contain"/>
             </button>
           `).join('')}
         </div>
@@ -538,12 +569,89 @@ function renderModalContent(product) {
 
 function switchModalImage(index) {
   if (!selectedProductForModal) return;
+  resetModalImageZoom();
   activeModalImageIndex = index;
   const imgEl = document.getElementById("modal-main-image");
   if (imgEl && selectedProductForModal.gallery[index]) {
     imgEl.src = selectedProductForModal.gallery[index];
   }
   renderModalContent(selectedProductForModal);
+}
+
+/**
+ * Inspección Dinámica de Producto en Modal (Zoom Estilo Boutique)
+ */
+function handleModalImageZoom(e) {
+  const box = document.getElementById("modal-image-zoom-box");
+  const img = document.getElementById("modal-main-image");
+  if (!box || !img) return;
+
+  const rect = box.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+  const clampedX = Math.max(0, Math.min(100, x));
+  const clampedY = Math.max(0, Math.min(100, y));
+
+  box.classList.add("is-zooming");
+  img.style.transformOrigin = `${clampedX}% ${clampedY}%`;
+  img.style.transform = "scale(2.4)";
+}
+
+function resetModalImageZoom() {
+  const box = document.getElementById("modal-image-zoom-box");
+  const img = document.getElementById("modal-main-image");
+  isTouchZoomActive = false;
+  if (!img) return;
+
+  if (box) {
+    box.classList.remove("is-zooming");
+  }
+  img.style.transformOrigin = "center center";
+  img.style.transform = "scale(1)";
+}
+
+let isTouchZoomActive = false;
+
+function handleModalTouchZoom(e) {
+  if (!isTouchZoomActive || !e.touches || e.touches.length === 0) return;
+  const touch = e.touches[0];
+  const box = document.getElementById("modal-image-zoom-box");
+  const img = document.getElementById("modal-main-image");
+  if (!box || !img) return;
+
+  const rect = box.getBoundingClientRect();
+  const x = ((touch.clientX - rect.left) / rect.width) * 100;
+  const y = ((touch.clientY - rect.top) / rect.height) * 100;
+
+  const clampedX = Math.max(0, Math.min(100, x));
+  const clampedY = Math.max(0, Math.min(100, y));
+
+  box.classList.add("is-zooming");
+  img.style.transformOrigin = `${clampedX}% ${clampedY}%`;
+  img.style.transform = "scale(2.2)";
+}
+
+function toggleModalTouchZoom(e) {
+  const box = document.getElementById("modal-image-zoom-box");
+  const img = document.getElementById("modal-main-image");
+  if (!box || !img) return;
+
+  isTouchZoomActive = !isTouchZoomActive;
+  if (isTouchZoomActive) {
+    const touch = (e.touches && e.touches.length > 0) ? e.touches[0] : (e.changedTouches ? e.changedTouches[0] : null);
+    const rect = box.getBoundingClientRect();
+    const x = touch ? (((touch.clientX - rect.left) / rect.width) * 100) : 50;
+    const y = touch ? (((touch.clientY - rect.top) / rect.height) * 100) : 50;
+    const clampedX = Math.max(0, Math.min(100, x));
+    const clampedY = Math.max(0, Math.min(100, y));
+
+    box.classList.add("is-zooming");
+    img.style.transformOrigin = `${clampedX}% ${clampedY}%`;
+    img.style.transform = "scale(2.2)";
+  } else {
+    resetModalImageZoom();
+  }
 }
 
 function sendModalWhatsAppOrder() {
@@ -607,6 +715,7 @@ function initMobileMenu() {
     if (backdrop) backdrop.classList.remove("hidden");
     if (openBtn) openBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
+    document.body.classList.add("menu-open");
     if (closeBtn) closeBtn.focus();
     trapFocusInContainer(drawer);
   };
@@ -620,6 +729,7 @@ function initMobileMenu() {
       openBtn.focus();
     }
     document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
   };
 
   if (openBtn) openBtn.addEventListener("click", openDrawer);

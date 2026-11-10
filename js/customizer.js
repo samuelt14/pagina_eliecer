@@ -44,42 +44,87 @@ const CUSTOM_PIECES = {
     description: "Aislamiento térmico interior y cuero flexible para raquetas de tenis o palas de pádel."
   },
 
-  // 3. Línea Marroquinería
-  "tarjetero-marroquineria": {
-    id: "custom-tarjetero",
-    line: "marroquineria",
-    lineName: "Línea Marroquinería",
-    logo: LINE_LOGOS.marroquineria,
-    name: "Tarjetero Minimalista 'Horizon'",
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=1000&q=85",
-    description: "Perfil ultradelgado de 3 a 5 ranuras biseladas y pulidas a mano con cera pura."
-  },
+  // 3. Línea Marroquinería (Fotos reales)
   "billetera-marroquineria": {
     id: "custom-billetera",
     line: "marroquineria",
     lineName: "Línea Marroquinería",
     logo: LINE_LOGOS.marroquineria,
-    name: "Billetera Bifold Clásica 'Andes'",
-    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1000&q=85",
-    description: "Diseño plano con ranuras múltiples para tarjetas y billetes internacionales."
-  },
-  "cinturon-marroquineria": {
-    id: "custom-cinturon",
-    line: "marroquineria",
-    lineName: "Línea Marroquinería",
-    logo: LINE_LOGOS.marroquineria,
-    name: "Cinturón Macizo de Silla 'Artesano'",
-    image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=1000&q=85",
-    description: "Una sola tira continua de 4mm de cuero macizo con hebilla forjada a medida."
+    name: "Billetera Verde de Doble Vista",
+    image: "fotos/Marroquineria/billetera-verde-doble-vista.webp",
+    description: "Diseño bifold exclusivo en cuero verde olivo con arquitectura de doble vista."
   },
   "pasaporte-marroquineria": {
     id: "custom-pasaporte",
     line: "marroquineria",
     lineName: "Línea Marroquinería",
     logo: LINE_LOGOS.marroquineria,
-    name: "Funda de Pasaporte 'Vuelo'",
-    image: "https://images.unsplash.com/photo-1563903530058-2bf4563ff4e4?auto=format&fit=crop&w=1000&q=85",
-    description: "Cubierta refinada para pasaporte doble, pases de abordar y tarjetas."
+    name: "Colección de Portapasaportes 'Vuelo'",
+    image: "fotos/Marroquineria/coleccion-portapasaportes.webp",
+    description: "Estuche refinado para pasaportes, pases de abordar y documentos de viaje."
+  },
+  "portavinos-marroquineria": {
+    id: "custom-portavinos",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Estuche Porta Vinos 'Sommelier'",
+    image: "fotos/Marroquineria/porta-vinos-1.webp",
+    description: "Estructura cilíndrica de cuero macizo para transporte y regalo de vinos."
+  },
+  "accesorios-marroquineria": {
+    id: "custom-accesorios",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Set de Accesorios Fines de Taller",
+    image: "fotos/Marroquineria/set-accesorios-artesanal.webp",
+    description: "Tarjetero, llavero y estuche artesanal pulidos a mano con cera natural."
+  },
+  "carteras-marroquineria": {
+    id: "custom-carteras",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Set de Carteras & Viaje",
+    image: "fotos/Marroquineria/set-carteras-viaje.webp",
+    description: "Bolsos de mano y equipaje liviano con asas ergonómicas en cuero vacuno."
+  },
+  "alfombra-marroquineria": {
+    id: "custom-alfombra",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Alfombra de Piel de Vaca Natural",
+    image: "fotos/Marroquineria/alfombra-vaca-blanco-negro.webp",
+    description: "Pieza única de acento para interiores en piel de vaca 100% natural."
+  },
+  "bolso-hombre-marroquineria": {
+    id: "custom-bolso-hombre",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Bolso Lateral & Canguro Hombre Floter",
+    image: "fotos/Marroquineria/bolso-lateral-canguro-hombre-floter-miel.webp",
+    description: "Silueta cruzada ergonómica en cuero floter graneado de alta durabilidad."
+  },
+  "canguro-dama-marroquineria": {
+    id: "custom-canguro-dama",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Bolso Canguro Dama 'Panter'",
+    image: "fotos/Marroquineria/bolso-canguro-dama-floter-negro-panter.webp",
+    description: "Diseño curvilíneo de tendencia para llevar al pecho o cintura en cuero suave."
+  },
+  "llavero-marroquineria": {
+    id: "custom-llavero",
+    line: "marroquineria",
+    lineName: "Línea Marroquinería",
+    logo: LINE_LOGOS.marroquineria,
+    name: "Llavero de Cuero & Doble Hebilla",
+    image: "fotos/Marroquineria/llavero-cuero-graso-doble-hebilla.webp",
+    description: "Talabartería en miniatura con herrajes macizos y cuero curtido al aceite."
   },
 
   // 4. Línea Institucional
@@ -102,24 +147,24 @@ const CUSTOM_PIECES = {
     description: "Superficie de cuero suave con base de gamuza antideslizante para oficinas directivas."
   },
 
-  // 5. Línea Premium (Fotos reales)
-  "portafolio-premium": {
-    id: "custom-portafolio-pr",
+  // 5. Línea Premium (Fotos reales de taller)
+  "morral-lauren-premium": {
+    id: "custom-morral-lauren",
     line: "premium",
     lineName: "Línea Premium",
     logo: LINE_LOGOS.premium,
-    name: "Portafolio Insignia Bogotá–Montréal",
-    image: "fotos/Premium/Gemini_Generated_Image_azsaxvazsaxvazsa.jpg",
-    description: "La cúspide del oficio marroquinero. Cuero plena flor seleccionado y herrajes macizos forjados."
+    name: "Morral Ejecutivo de Dama 'Lauren' — EG Marroquinería",
+    image: "fotos/Marroquineria/catalogo/mochila-ejecutiva-dama-nude-lauren-eg.jpg",
+    description: "Cuero vacuno suave tono nude arena, placa dorada pulida Lauren y solapa de alta marroquinería."
   },
-  "tote-premium": {
-    id: "custom-tote-pr",
+  "portabotellas-premium": {
+    id: "custom-portabotellas",
     line: "premium",
     lineName: "Línea Premium",
     logo: LINE_LOGOS.premium,
-    name: "Tote Atelier de Cuero Esculpido",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
-    description: "Volumen arquitectónico limpio en cuero semigraso encerado sin forro sintético."
+    name: "Portabotellas de Lujo Baileys — Sello EG",
+    image: "fotos/Marroquineria/catalogo/portabotellas-baileys-lujo-cuero-grabado-eg.jpg",
+    description: "Estuche cilíndrico rígido en cuero grabado cocodrilo con solapa de broche y forro satinado."
   }
 };
 
@@ -147,7 +192,7 @@ const FOIL_TYPES = [
 
 let customState = {
   filterLine: "all", // all | sport | deportiva | marroquineria | institucional | premium
-  pieceKey: "portafolio-premium",
+  pieceKey: "billetera-marroquineria",
   leatherColor: "cognac",
   hardware: "brass",
   monogramType: "initials", // initials | logo
@@ -167,7 +212,7 @@ function renderCustomizerUI() {
   const container = document.getElementById("customizer-interactive");
   if (!container) return;
 
-  const currentPiece = CUSTOM_PIECES[customState.pieceKey] || CUSTOM_PIECES["portafolio-premium"];
+  const currentPiece = CUSTOM_PIECES[customState.pieceKey] || CUSTOM_PIECES["billetera-marroquineria"];
   const currentColor = LEATHER_COLORS.find(c => c.id === customState.leatherColor) || LEATHER_COLORS[0];
   const currentFoil = FOIL_TYPES.find(f => f.id === customState.foilType) || FOIL_TYPES[0];
 
@@ -231,12 +276,12 @@ function renderCustomizerUI() {
           </div>
 
           <!-- Canvas Visual del Producto -->
-          <div class="relative aspect-[4/3] w-full overflow-hidden bg-sand/20 flex items-center justify-center group">
+          <div class="relative aspect-[4/3] w-full overflow-hidden bg-sand/20 p-4 flex items-center justify-center group">
             <img 
               id="custom-preview-img" 
               src="${currentPiece.image}" 
               alt="${currentPiece.name}" 
-              class="w-full h-full object-cover object-center transition-all duration-700 filter group-hover:scale-105"
+              class="max-w-full max-h-full w-auto h-auto object-contain mx-auto transition-all duration-700 filter group-hover:scale-105"
             />
             
             <!-- Capa de Tinte del Cuero -->
@@ -609,7 +654,7 @@ function updateCustomNotes(notes) {
 }
 
 function sendCustomWhatsAppQuote() {
-  const piece = CUSTOM_PIECES[customState.pieceKey] || CUSTOM_PIECES["portafolio-premium"];
+  const piece = CUSTOM_PIECES[customState.pieceKey] || CUSTOM_PIECES["billetera-marroquineria"];
   const color = LEATHER_COLORS.find(c => c.id === customState.leatherColor) || LEATHER_COLORS[0];
   const foil = FOIL_TYPES.find(f => f.id === customState.foilType) || FOIL_TYPES[0];
   const hardware = HARDWARE_OPTIONS.find(h => h.id === customState.hardware) || HARDWARE_OPTIONS[0];

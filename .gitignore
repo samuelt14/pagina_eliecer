@@ -1,0 +1,74 @@
+# Dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python y entornos virtuales
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+env/
+ENV/
+.venv
+
+# Variables de entorno y secretos
+.env
+.env.local
+.env.*.local
+*.env
+
+# Archivos del sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editores e IDEs (VS Code, JetBrains, etc.)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Configuración y cachés de agentes / IA
+.gemini/
+.agents/
+.claude/
+.codex/
+
+# Archivos temporales y de pruebas
+scratch/
+scratch_*.py
+temp_*
+*.tmp
+*.log

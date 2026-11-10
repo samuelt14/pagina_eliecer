@@ -1,9 +1,6 @@
 /* ==========================================================================
    ELICER — Estilos de Lujo Editorial & Dirección de Arte
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap');
-
 :root {
   --color-ivory: #F4F0E8;
   --color-warm-white: #FAF8F4;
@@ -152,22 +149,24 @@ body {
   );
 }
 
-/* Tarjetas de Producto */
+/* Tarjetas de Producto - Alto Contraste & Elevación Editorial */
 .product-card {
   position: relative;
-  background-color: var(--color-warm-white);
-  border: 1px solid rgba(216, 200, 181, 0.5);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(138, 99, 71, 0.28);
+  box-shadow: 0 12px 32px -6px rgba(28, 27, 25, 0.12), 0 4px 12px -2px rgba(28, 27, 25, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
 }
 
 .product-card:hover {
   border-color: var(--color-leather);
-  box-shadow: 0 16px 36px -12px rgba(53, 40, 32, 0.12);
-  transform: translateY(-3px);
+  box-shadow: 0 24px 50px -10px rgba(53, 40, 32, 0.22), 0 8px 20px -4px rgba(53, 40, 32, 0.10);
+  transform: translateY(-5px);
 }
 
 .product-card-img {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-card:hover .product-card-img {
@@ -390,24 +389,38 @@ input:focus-visible {
 }
 
 .floating-whatsapp-container {
-  position: fixed;
-  bottom: calc(1.5rem + var(--sab));
-  right: calc(1.5rem + var(--sar));
-  z-index: 40;
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+  right: calc(24px + env(safe-area-inset-right, 0px)) !important;
+  z-index: 45 !important;
+  display: block !important;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Ocultar botón flotante cuando el modal de producto o el menú móvil están abiertos */
+body.modal-open .floating-whatsapp-container,
+body.menu-open .floating-whatsapp-container {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(20px) scale(0.85);
 }
 
 @media (max-width: 380px) {
   .floating-whatsapp-container {
-    bottom: calc(1rem + var(--sab));
-    right: calc(1rem + var(--sar));
+    bottom: 16px !important;
+    right: 16px !important;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+    right: calc(16px + env(safe-area-inset-right, 0px)) !important;
   }
   .floating-whatsapp-circle {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
   }
   .floating-whatsapp-circle svg {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
   /* Ocultar tooltip en pantallas muy estrechas para evitar desborde lateral */
   .floating-tooltip {
@@ -450,5 +463,29 @@ input:focus-visible {
 .touch-target-min {
   min-height: 44px;
   min-width: 44px;
+}
+
+/* =========================================================================
+   INSPECCIÓN DE PRODUCTO: ZOOM DINÁMICO (ESTILO BOUTIQUE)
+   ========================================================================= */
+#modal-image-zoom-box {
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #modal-image-zoom-box:hover {
+    cursor: zoom-in;
+  }
+}
+
+#modal-main-image {
+  will-change: transform;
+  transform-origin: center center;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+#modal-image-zoom-box.is-zooming #modal-main-image {
+  transition: transform 0.05s ease-out;
 }
 

@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-"""
-ELICER — Servidor HTTP Seguro con Protección Integral
-Cumple con las 20 directrices de seguridad de la auditoría:
-- Rate Limiting activo por IP para mitigar saturación y ataques DoS (Regla 1)
-- Cabeceras de seguridad estrictas: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP, CORP (Regla 13)
-- Restricción estricta de métodos HTTP: sólo GET, HEAD y OPTIONS (Regla 7)
-- Prohibición estricta de listado de directorios (Regla 16)
-- Mitigación contra Path Traversal mediante validación canónica de rutas (Regla 4, 17)
-- Bloqueo de archivos dotfiles (.env, .git, etc.) (Regla 16)
-- Enmascaramiento de información y versión del servidor (Regla 16, 19)
-- Respuestas de error genéricas y seguras (Regla 8)
-- Registro seguro de solicitudes sin fuga de datos sensibles (Regla 18)
-"""
-
 import os
 import sys
 import time
@@ -26,10 +11,6 @@ PORT = 8000
 HOST = "0.0.0.0"
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-# =========================================================================
-# 1. Rate Limiting en Memoria por Dirección IP (Sliding Window)
-# Permite hasta 120 solicitudes por minuto por IP con respuesta HTTP 429
-# =========================================================================
 RATE_LIMIT_WINDOW_SECONDS = 60
 RATE_LIMIT_MAX_REQUESTS = 120
 
@@ -51,9 +32,6 @@ class IPRateLimiter:
 
 rate_limiter = IPRateLimiter()
 
-# =========================================================================
-# 2. Manejador HTTP Seguro
-# =========================================================================
 class SecureHTTPRequestHandler(BaseHTTPRequestHandler):
     # Enmascarar información de software y versión del servidor (Regla 16, 19)
     server_version = "WebServer"
@@ -87,8 +65,8 @@ class SecureHTTPRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Cross-Origin-Opener-Policy", "same-origin-allow-popups")
         self.send_header("Cross-Origin-Resource-Policy", "same-origin")
         
-        # Cache-Control seguro
-        if "text/html" in content_type:
+        # Cache-Control seguro y fresco
+        if "text/html" in content_type or "javascript" in content_type or "css" in content_type:
             self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         else:
             self.send_header("Cache-Control", "public, max-age=86400, stale-while-revalidate=3600")
